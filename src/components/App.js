@@ -21,7 +21,7 @@ class App extends React.Component {
       <div className="theater_app container">
         <MovieListing />
         <Order />
-        <UpdateMovies />
+        <UpdateMovies loadSampleMovies={this.loadSampleMovies} />
       </div>
     );
   }
