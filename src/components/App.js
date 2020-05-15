@@ -1,8 +1,30 @@
 import React from 'react';
 import '../css/App.css';
+import MovieListing from './MovieListing';
+import Order from './Order';
+import UpdateMovies from './UpdateMovies';
+import sampleMovies from '../sample-movies';
 
-function App() {
-  return <div>Howdy!</div>;
+class App extends React.Component {
+  state = {
+    movies: {},
+    order: {},
+  };
+
+  loadSampleMovies = () => {
+    this.setState({
+      movies: sampleMovies,
+    });
+  };
+  render() {
+    return (
+      <div className="theater_app container">
+        <MovieListing />
+        <Order />
+        <UpdateMovies />
+      </div>
+    );
+  }
 }
 
 export default App;

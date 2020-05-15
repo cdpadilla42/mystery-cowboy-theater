@@ -6,7 +6,7 @@ import TheaterPicker from './components/TheaterPicker';
 
 ReactDOM.render(
   <React.StrictMode>
-    <TheaterPicker />
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
