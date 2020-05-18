@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 class UpdateMovies extends Component {
   static propTypes = {
-    loadSampleMovies: PropTypes.object,
+    loadSampleMovies: PropTypes.func,
   };
   render() {
     return (

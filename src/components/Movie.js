@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class Movie extends Component {
   render() {
-    return <div>It's a film! 🍿</div>;
+    return <div className="movie">{this.props.movie.name}</div>;
   }
 }
 
