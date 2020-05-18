@@ -1,7 +1,7 @@
 const movies = {
   movie1: {
     name: 'Eegah!',
-    image: '',
+    image: '/imgs/eegah.jpg',
     desc:
       'A giant caveman stumbles across modern civilization, then kidnaps a teenage girl and her father.',
     price: 1500,
