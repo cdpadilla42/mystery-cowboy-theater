@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { priceConverter } from '../helper';
 
 class Movie extends Component {
   static propTypes = {
@@ -20,7 +21,7 @@ class Movie extends Component {
         <div className="card-body">
           <h5 className="card-title">{movie.name}</h5>
           <p className="card-text">{movie.desc}</p>
-          <p className="price">{movie.price}</p>
+          <p className="price">{priceConverter(movie.price)}</p>
         </div>
       </div>
     );
