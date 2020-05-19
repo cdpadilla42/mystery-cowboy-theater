@@ -31,12 +31,18 @@ class App extends React.Component {
     });
   };
 
-  addToOrder = () => {};
+  addToOrder = (key) => {
+    const order = { ...this.state.order };
+    order[key] ? (order[key] = order[key] + 1) : (order[key] = 1);
+    this.setState({
+      order,
+    });
+  };
 
   render() {
     return (
       <div className="theater_app container">
-        <MovieListing movies={this.state.movies} />
+        <MovieListing movies={this.state.movies} addToOrder={this.addToOrder} />
         <Order />
         <UpdateMovies loadSampleMovies={this.loadSampleMovies} />
       </div>

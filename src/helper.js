@@ -8,18 +8,18 @@ export function rando(arr) {
 
 export function getStreetName() {
   const streets = [
-    'Congress Avenue',
-    'Sixth Street',
-    'Rainey Street',
-    'West End/Market District',
-    'Seaholm District',
-    'Barton Springs Road',
-    'West Anderson Ln',
-    'Red River Cultural District',
-    'The Domain',
+    'Congress-Avenue',
+    'Sixth-Street',
+    'Rainey-Street',
+    'West-End-Market-District',
+    'Seaholm-District',
+    'Barton-Springs-Road',
+    'West-Anderson-Ln',
+    'Red-River-Cultural-District',
+    'The-Domain',
     'Mueller',
-    'West Campus',
-    'Airport Blvd',
+    'West-Campus',
+    'Airport-Blvd',
   ];
 
   return rando(streets);

@@ -10,6 +10,7 @@ class MovieListing extends Component {
       desc: PropTypes.string,
       price: PropTypes.number,
     }),
+    addToOrder: PropTypes.func,
   };
 
   render() {
@@ -17,7 +18,14 @@ class MovieListing extends Component {
     return (
       <div className="movie_listing">
         {Object.keys(movies).map((key) => {
-          return <Movie movie={movies[key]} key={key} index={key} />;
+          return (
+            <Movie
+              movie={movies[key]}
+              key={key}
+              index={key}
+              addToOrder={this.props.addToOrder}
+            />
+          );
         })}
       </div>
     );
