@@ -55,10 +55,30 @@ class App extends React.Component {
     });
   };
 
+  addMovie = (movie) => {
+    const movieKey = `movie${Date.now()}`;
+    const movies = {
+      ...this.state.movies,
+      [movieKey]: movie,
+    };
+    this.setState({
+      movies,
+    });
+  };
+
+  updateMovie = (e) => {
+    e.preventDefault();
+    console.log('movie updating!');
+  };
+
   render() {
     return (
       <div className="theater_app container">
-        <UpdateMovies loadSampleMovies={this.loadSampleMovies} />
+        <UpdateMovies
+          addMovie={this.addMovie}
+          updateMovie={this.updateMovie}
+          loadSampleMovies={this.loadSampleMovies}
+        />
         <Order movies={this.state.movies} order={this.state.order} />
         <MovieListing movies={this.state.movies} addToOrder={this.addToOrder} />
       </div>

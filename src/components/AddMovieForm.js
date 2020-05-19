@@ -1,15 +1,34 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-class EditMovieForm extends Component {
+class AddMovieForm extends Component {
   static propTypes = {
-    updateMovie: PropTypes.func,
+    addMovie: PropTypes.func,
+  };
+
+  nameRef = React.createRef();
+  descriptionRef = React.createRef();
+  priceRef = React.createRef();
+  theaterRef = React.createRef();
+  imageRef = React.createRef();
+
+  handleFormSubmit = (e) => {
+    e.preventDefault();
+    const movie = {
+      name: this.nameRef.current.value,
+      description: this.descriptionRef.current.value,
+      price: parseInt(this.priceRef.current.value),
+      theater: this.theaterRef.current.value,
+      image: this.imageRef.current.value,
+    };
+    console.log(movie);
+    this.props.addMovie(movie);
   };
 
   render() {
     return (
-      <form className="edit-movie" onSubmit={this.props.updateMovie}>
-        <h1>Edit Movie</h1>
+      <form className="add-movie" onSubmit={this.handleFormSubmit}>
+        <h1>Add movie</h1>
         <div className="form-group">
           <input
             type="text"
@@ -56,4 +75,4 @@ class EditMovieForm extends Component {
   }
 }
 
-export default EditMovieForm;
+export default AddMovieForm;

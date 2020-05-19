@@ -17,12 +17,12 @@ class MovieListing extends Component {
     const movies = this.props.movies;
     return (
       <div className="movie_listing">
-        {Object.keys(movies).map((key) => {
+        {Object.keys(movies).map((movieKey) => {
           return (
             <Movie
-              movie={movies[key]}
-              key={key}
-              index={key}
+              movie={movies[movieKey]}
+              key={movieKey}
+              index={movieKey}
               addToOrder={this.props.addToOrder}
             />
           );

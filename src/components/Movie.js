@@ -6,7 +6,7 @@ class Movie extends Component {
   static propTypes = {
     movie: PropTypes.object,
     addToOrder: PropTypes.func,
-    key: PropTypes.string,
+    index: PropTypes.string,
   };
 
   render() {
