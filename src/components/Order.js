@@ -14,7 +14,9 @@ class Order extends Component {
       <div>
         <h2>Here's your tix 🎟</h2>
         {Object.keys(order).map((key) => {
-          return <p>{`${order[key]} tickets for ${movies[key].name}`}</p>;
+          const movie = movies[key];
+          if (!movie) return null;
+          return <p>{`${order[key]} tickets for ${movie.name}`}</p>;
         })}
       </div>
     );

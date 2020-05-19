@@ -14,10 +14,26 @@ class App extends React.Component {
 
   componentDidMount() {
     const params = this.props.match.params.theaterId;
+
+    // TODO See how Wes fixed this bug...
+    const orderLocalStorage = JSON.parse(localStorage.getItem(`${params}`));
+    if (orderLocalStorage) {
+      this.setState({
+        order: orderLocalStorage,
+      });
+    }
+
+    // Update Movies from firebase
     this.ref = base.syncState(`${params}/movies`, {
       context: this,
       state: 'movies',
     });
+  }
+
+  componentDidUpdate() {
+    const params = this.props.match.params.theaterId;
+    const order = JSON.stringify(this.state.order);
+    localStorage.setItem(`${params}`, order);
   }
 
   componentWillUnmount() {
