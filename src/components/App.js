@@ -58,9 +58,9 @@ class App extends React.Component {
   render() {
     return (
       <div className="theater_app container">
+        <UpdateMovies loadSampleMovies={this.loadSampleMovies} />
         <Order movies={this.state.movies} order={this.state.order} />
         <MovieListing movies={this.state.movies} addToOrder={this.addToOrder} />
-        <UpdateMovies loadSampleMovies={this.loadSampleMovies} />
       </div>
     );
   }
