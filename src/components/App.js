@@ -13,7 +13,6 @@ class App extends React.Component {
   };
 
   componentDidMount() {
-    // TODO: UPDATE SAVING SPOT W/ PARAMS
     const params = this.props.match.params.theaterId;
     this.ref = base.syncState(`${params}/movies`, {
       context: this,
@@ -26,10 +25,14 @@ class App extends React.Component {
   }
 
   loadSampleMovies = () => {
+    const movies = { ...this.state.movies, ...sampleMovies };
     this.setState({
-      movies: sampleMovies,
+      movies,
     });
   };
+
+  addToOrder = () => {};
+
   render() {
     return (
       <div className="theater_app container">

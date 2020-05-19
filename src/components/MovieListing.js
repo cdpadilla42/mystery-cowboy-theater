@@ -17,7 +17,6 @@ class MovieListing extends Component {
     return (
       <div className="movie_listing">
         {Object.keys(movies).map((key) => {
-          console.log(movies[key].name);
           return <Movie movie={movies[key]} key={key} index={key} />;
         })}
       </div>

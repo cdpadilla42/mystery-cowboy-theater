@@ -8,7 +8,6 @@ class TheaterPicker extends Component {
     e.preventDefault();
     // store theater name
     const theaterName = this.theaterNameRef.current.value;
-    // TODO visit store at address - react router
     this.props.history.push(`/theater/${theaterName}`);
   };
 
