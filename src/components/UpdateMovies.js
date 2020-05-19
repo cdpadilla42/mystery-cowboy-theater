@@ -8,13 +8,21 @@ class UpdateMovies extends Component {
     loadSampleMovies: PropTypes.func,
     updateMovie: PropTypes.func,
     addMovie: PropTypes.func,
+    movies: PropTypes.object,
   };
   render() {
     return (
       <div className="update_movies">
         <h6>Change the movies, boss person 🎥</h6>
+        {Object.keys(this.props.movies).map((movieKey) => {
+          return (
+            <EditMovieForm
+              movie={this.props.movies[movieKey]}
+              updateMovie={this.props.updateMovie}
+            />
+          );
+        })}
         <AddMovieForm addMovie={this.props.addMovie} />
-        {/* <EditMovieForm updateMovie={this.props.updateMovie} /> */}
         <button
           onClick={this.props.loadSampleMovies}
           className="btn btn-primary"

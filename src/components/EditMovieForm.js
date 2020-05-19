@@ -4,9 +4,10 @@ import PropTypes from 'prop-types';
 class EditMovieForm extends Component {
   static propTypes = {
     updateMovie: PropTypes.func,
+    movie: PropTypes.object,
   };
 
-  render() {
+  renderForm = () => {
     return (
       <form className="edit-movie" onSubmit={this.props.updateMovie}>
         <h1>Edit Movie</h1>
@@ -53,6 +54,12 @@ class EditMovieForm extends Component {
         <button type="submit">Add Movie</button>
       </form>
     );
+  };
+
+  render() {
+    const movie = this.props.movie;
+    // TODO: Flesh out the edit movies form
+    return <div className="movie">🍿</div>;
   }
 }
 

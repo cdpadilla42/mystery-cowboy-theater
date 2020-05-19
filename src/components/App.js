@@ -75,6 +75,7 @@ class App extends React.Component {
     return (
       <div className="theater_app container">
         <UpdateMovies
+          movies={this.state.movies}
           addMovie={this.addMovie}
           updateMovie={this.updateMovie}
           loadSampleMovies={this.loadSampleMovies}
