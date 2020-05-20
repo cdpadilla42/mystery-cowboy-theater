@@ -19,6 +19,8 @@ class UpdateMovies extends Component {
             <EditMovieForm
               movie={this.props.movies[movieKey]}
               updateMovie={this.props.updateMovie}
+              key={movieKey}
+              index={movieKey}
             />
           );
         })}

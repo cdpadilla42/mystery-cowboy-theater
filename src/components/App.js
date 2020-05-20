@@ -66,9 +66,17 @@ class App extends React.Component {
     });
   };
 
-  updateMovie = (e) => {
-    e.preventDefault();
-    console.log('movie updating!');
+  updateMovie = (movie, movieKey) => {
+    // 1. copy state
+    // 2. add change
+    const movies = {
+      ...this.state.movies,
+      [movieKey]: movie,
+    };
+    // 3. set state
+    this.setState({
+      movies,
+    });
   };
 
   render() {

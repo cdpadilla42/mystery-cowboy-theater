@@ -5,61 +5,68 @@ class EditMovieForm extends Component {
   static propTypes = {
     updateMovie: PropTypes.func,
     movie: PropTypes.object,
+    index: PropTypes.string,
   };
 
-  renderForm = () => {
+  handleChange = (e) => {
+    // 1. take in value and store into movies
+    const input = e.target;
+    const movie = {
+      ...this.props.movie,
+      [input.name]: input.value,
+    };
+    // 2. send value to state for change w/ passed down prop.
+    this.props.updateMovie(movie, this.props.index);
+  };
+
+  render() {
+    const movie = this.props.movie;
+    // TODO: Flesh out the edit movies form
     return (
       <form className="edit-movie" onSubmit={this.props.updateMovie}>
-        <h1>Edit Movie</h1>
         <div className="form-group">
           <input
             type="text"
             name="name"
-            ref={this.nameRef}
-            placeholder="name"
+            onChange={this.handleChange}
+            value={movie.name}
           />
         </div>
         <div className="form-group">
           <input
             type="text"
             name="description"
-            ref={this.descriptionRef}
-            placeholder="description"
+            onChange={this.handleChange}
+            value={movie.description}
           />
         </div>
         <div className="form-group">
           <input
             type="text"
             name="price"
-            ref={this.priceRef}
-            placeholder="price"
+            onChange={this.handleChange}
+            value={movie.price}
           />
         </div>
         <div className="form-group">
           <input
             type="text"
             name="theater"
-            ref={this.theaterRef}
-            placeholder="theater"
+            onChange={this.handleChange}
+            value={movie.theater}
           />
         </div>
         <div className="form-group">
           <input
             type="text"
             name="image"
-            ref={this.imageRef}
-            placeholder="image"
+            onChange={this.handleChange}
+            value={movie.image}
           />
         </div>
-        <button type="submit">Add Movie</button>
+        <button>Delete Movie</button>
       </form>
     );
-  };
-
-  render() {
-    const movie = this.props.movie;
-    // TODO: Flesh out the edit movies form
-    return <div className="movie">🍿</div>;
   }
 }
 
