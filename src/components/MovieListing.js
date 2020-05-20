@@ -9,6 +9,7 @@ class MovieListing extends Component {
       image: PropTypes.string,
       desc: PropTypes.string,
       price: PropTypes.number,
+      showtimes: PropTypes.object,
     }),
     addToOrder: PropTypes.func,
   };

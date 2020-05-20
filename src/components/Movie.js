@@ -9,11 +9,29 @@ class Movie extends Component {
     index: PropTypes.string,
   };
 
+  handleShowtimeClick = (e) => {
+    console.log(e.target, this.props.index);
+  };
+
+  renderShowTimes = () => {
+    const movie = this.props.movie;
+    const showtimes = movie.showtimes;
+    if (!showtimes) {
+      return <div>No Showtimes yet!</div>;
+    }
+    return Object.keys(showtimes).map((key) => {
+      return (
+        <button key={key} index={key} onClick={this.handleShowtimeClick}>
+          {showtimes[key].time}
+        </button>
+      );
+    });
+  };
+
   render() {
     const movie = this.props.movie;
     return (
       <div className="movie card">
-        {/* TODO: Layout movie card */}
         <img
           className="card-img-top"
           src={movie.image}
@@ -24,6 +42,11 @@ class Movie extends Component {
           <h5 className="card-title">{movie.name}</h5>
           <p className="card-text">{movie.desc}</p>
           <p className="price">{priceConverter(movie.price)}</p>
+          {/* Future Feature: Select show times */}
+          {/* <div className="showTimes">
+            <h3>Showtimes:</h3>
+            {this.renderShowTimes()}
+          </div> */}
           <p>
             <button
               className="btn btn-primary"
