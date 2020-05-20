@@ -19,11 +19,15 @@ class EditMovieForm extends Component {
     this.props.updateMovie(movie, this.props.index);
   };
 
+  handleFormSubmit = (e) => {
+    e.preventDefault();
+  };
+
   render() {
     const movie = this.props.movie;
     // TODO: Flesh out the edit movies form
     return (
-      <form className="edit-movie" onSubmit={this.props.updateMovie}>
+      <form className="edit-movie" onSubmit={this.handleFormSubmit}>
         <div className="form-group">
           <input
             type="text"
@@ -64,7 +68,9 @@ class EditMovieForm extends Component {
             value={movie.image}
           />
         </div>
-        <button>Delete Movie</button>
+        <button onClick={() => this.props.deleteMovie(this.props.index)}>
+          Delete Movie
+        </button>
       </form>
     );
   }

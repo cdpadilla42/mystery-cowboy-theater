@@ -9,6 +9,7 @@ class UpdateMovies extends Component {
     updateMovie: PropTypes.func,
     addMovie: PropTypes.func,
     movies: PropTypes.object,
+    deleteMovie: PropTypes.func,
   };
   render() {
     return (
@@ -21,6 +22,7 @@ class UpdateMovies extends Component {
               updateMovie={this.props.updateMovie}
               key={movieKey}
               index={movieKey}
+              deleteMovie={this.props.deleteMovie}
             />
           );
         })}

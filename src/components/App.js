@@ -67,13 +67,20 @@ class App extends React.Component {
   };
 
   updateMovie = (movie, movieKey) => {
-    // 1. copy state
-    // 2. add change
     const movies = {
       ...this.state.movies,
       [movieKey]: movie,
     };
-    // 3. set state
+    this.setState({
+      movies,
+    });
+  };
+
+  deleteMovie = (movieKey) => {
+    const movies = {
+      ...this.state.movies,
+      [movieKey]: null,
+    };
     this.setState({
       movies,
     });
@@ -87,6 +94,7 @@ class App extends React.Component {
           addMovie={this.addMovie}
           updateMovie={this.updateMovie}
           loadSampleMovies={this.loadSampleMovies}
+          deleteMovie={this.deleteMovie}
         />
         <Order movies={this.state.movies} order={this.state.order} />
         <MovieListing movies={this.state.movies} addToOrder={this.addToOrder} />
