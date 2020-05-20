@@ -5,7 +5,8 @@ const movies = {
     desc:
       'A giant caveman stumbles across modern civilization, then kidnaps a teenage girl and her father.',
     price: 1500,
-    // Future Feature: Selecting showtimes
+    showtime: 1589990571180,
+    // Future Feature: Selecting showtimes & Seats
     // showtimes: {
     //   showTime1: {
     //     time: 1589990571180,
@@ -39,6 +40,7 @@ const movies = {
     desc:
       'A child adopts a large egg which hatches into a mischievous alien, while poachers and a group of pop musicians on a wilderness vacation run into trouble.',
     price: 1300,
+    showtime: 1589994571180,
   },
   movie3: {
     name: 'Gamera',
@@ -53,6 +55,7 @@ const movies = {
     desc:
       'In the first sequel to Ator, the Fighting Eagle, Ator helps a warrior woman rescue her father from an evil overlord.',
     price: 1500,
+    showtime: 15899905741180,
   },
   movie5: {
     name: 'Santa Claus Conquers the Martians',

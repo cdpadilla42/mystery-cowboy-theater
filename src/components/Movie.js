@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { priceConverter } from '../helper';
+import { priceConverter, formatTime } from '../helper';
 
 class Movie extends Component {
   static propTypes = {
@@ -42,6 +42,7 @@ class Movie extends Component {
           <h5 className="card-title">{movie.name}</h5>
           <p className="card-text">{movie.desc}</p>
           <p className="price">{priceConverter(movie.price)}</p>
+          <p>{formatTime(movie.showtime)}</p>
           {/* Future Feature: Select show times */}
           {/* <div className="showTimes">
             <h3>Showtimes:</h3>
