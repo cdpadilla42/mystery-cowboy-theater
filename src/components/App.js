@@ -55,6 +55,16 @@ class App extends React.Component {
     });
   };
 
+  deleteFromOrder = (key) => {
+    const order = {
+      ...this.props.order,
+    };
+    delete order[key];
+    this.setState({
+      order,
+    });
+  };
+
   addMovie = (movie) => {
     const movieKey = `movie${Date.now()}`;
     const movies = {
@@ -96,7 +106,11 @@ class App extends React.Component {
           loadSampleMovies={this.loadSampleMovies}
           deleteMovie={this.deleteMovie}
         />
-        <Order movies={this.state.movies} order={this.state.order} />
+        <Order
+          movies={this.state.movies}
+          order={this.state.order}
+          deleteFromOrder={this.deleteFromOrder}
+        />
         <MovieListing movies={this.state.movies} addToOrder={this.addToOrder} />
       </div>
     );

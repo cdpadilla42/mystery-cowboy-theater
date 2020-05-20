@@ -25,7 +25,6 @@ class EditMovieForm extends Component {
 
   render() {
     const movie = this.props.movie;
-    // TODO: Flesh out the edit movies form
     return (
       <form className="edit-movie" onSubmit={this.handleFormSubmit}>
         <div className="form-group">
