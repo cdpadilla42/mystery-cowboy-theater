@@ -27,50 +27,40 @@ class AddMovieForm extends Component {
 
   render() {
     return (
-      <form className="add-movie" onSubmit={this.handleFormSubmit}>
+      <>
         <h1>Add movie</h1>
-        <div className="form-group">
+        <form className="add_movie" onSubmit={this.handleFormSubmit}>
           <input
             type="text"
             name="name"
             ref={this.nameRef}
             placeholder="name"
           />
-        </div>
-        <div className="form-group">
-          <input
-            type="text"
-            name="description"
-            ref={this.descriptionRef}
-            placeholder="description"
-          />
-        </div>
-        <div className="form-group">
+
           <input
             type="text"
             name="price"
             ref={this.priceRef}
             placeholder="price"
           />
-        </div>
-        <div className="form-group">
-          <input
-            type="text"
-            name="theater"
-            ref={this.theaterRef}
-            placeholder="theater"
-          />
-        </div>
-        <div className="form-group">
           <input
             type="text"
             name="image"
             ref={this.imageRef}
             placeholder="image"
           />
-        </div>
-        <button type="submit">Add Movie</button>
-      </form>
+          <input
+            type="text"
+            name="description"
+            ref={this.descriptionRef}
+            placeholder="description"
+            id="desc"
+          />
+          <button id="dlt_btn" type="submit">
+            Add Movie
+          </button>
+        </form>
+      </>
     );
   }
 }

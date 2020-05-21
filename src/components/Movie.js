@@ -31,7 +31,7 @@ class Movie extends Component {
   render() {
     const movie = this.props.movie;
     return (
-      <div className="movie card">
+      <div className="movie_card">
         <img
           className="card-img-top movie__poster"
           src={movie.image}
