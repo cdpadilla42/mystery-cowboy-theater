@@ -12,10 +12,10 @@ class App extends React.Component {
     order: {},
   };
 
+  // TODO: Make it pretty! Let's get this done this week
+
   componentDidMount() {
     const params = this.props.match.params.theaterId;
-
-    // TODO See how Wes fixed this bug...
     const orderLocalStorage = JSON.parse(localStorage.getItem(`${params}`));
     if (orderLocalStorage) {
       this.setState({
@@ -98,20 +98,29 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="theater_app container">
-        <UpdateMovies
-          movies={this.state.movies}
-          addMovie={this.addMovie}
-          updateMovie={this.updateMovie}
-          loadSampleMovies={this.loadSampleMovies}
-          deleteMovie={this.deleteMovie}
-        />
-        <Order
-          movies={this.state.movies}
-          order={this.state.order}
-          deleteFromOrder={this.deleteFromOrder}
-        />
-        <MovieListing movies={this.state.movies} addToOrder={this.addToOrder} />
+      <div className="theater_app">
+        <div className="left_pane">
+          <MovieListing
+            movies={this.state.movies}
+            addToOrder={this.addToOrder}
+          />
+        </div>
+        <div className="mid_pane">
+          <Order
+            movies={this.state.movies}
+            order={this.state.order}
+            deleteFromOrder={this.deleteFromOrder}
+          />
+        </div>
+        <div className="right_pane">
+          <UpdateMovies
+            movies={this.state.movies}
+            addMovie={this.addMovie}
+            updateMovie={this.updateMovie}
+            loadSampleMovies={this.loadSampleMovies}
+            deleteMovie={this.deleteMovie}
+          />
+        </div>
       </div>
     );
   }

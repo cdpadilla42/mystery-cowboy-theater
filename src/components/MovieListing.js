@@ -18,6 +18,7 @@ class MovieListing extends Component {
     const movies = this.props.movies;
     return (
       <div className="movie_listing">
+        <h2 className="theater__name">Mystery Cowboy Theater!</h2>
         {Object.keys(movies).map((movieKey) => {
           return (
             <Movie
