@@ -55,11 +55,18 @@
   background-color: #fff;
 }
 
-#dlt_btn:hover {
+#dlt_btn:hover,
+#order_delete:hover {
   background-color: #ff7373;
 }
 
 .update_movies:last-child {
   margin: 0 auto;
   margin-bottom: 1rem;
+}
+
+#order_delete {
+  float: right;
+  background: none;
+  border: none;
 }

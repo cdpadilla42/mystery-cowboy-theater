@@ -63,6 +63,7 @@ const movies = {
     desc:
       'Martians abduct Santa Claus and two human children in hopes of bringing Christmas to their planet.',
     price: 1300,
+    showtime: 15893905741180,
   },
   movie6: {
     name: 'Manos: The Hands of Fate',
@@ -70,12 +71,14 @@ const movies = {
     desc:
       'A hapless family on a car trip in rural Texas take refuge at an inn that harbors a deadly cult.',
     price: 1800,
+    showtime: 15899945741180,
   },
   movie7: {
     name: 'Werewolf',
     image: '/imgs/werewolf.jpg',
     desc: 'After digging up strange bones, a man becomes a werewolf!',
     price: 1200,
+    showtime: 15899905751180,
   },
   movie8: {
     name: 'The Final Sacrifice',
@@ -83,6 +86,7 @@ const movies = {
     desc:
       'A teen follows a map left for him by his long-dead father, runs afoul of an evil cult, then teams up with a beer-guzzling drifter who has a secret.',
     price: 1500,
+    showtime: 15894905741180,
   },
 };
 

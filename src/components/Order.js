@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { priceConverter } from '../helper';
 
 class Order extends Component {
   static propTypes = {
@@ -17,6 +18,7 @@ class Order extends Component {
       <p key={key}>
         {`${order[key]} tickets for ${movie.name}`}
         <button
+          id="order_delete"
           onClick={() => this.props.deleteFromOrder(key)}
           className="delete-order-item"
         >
@@ -40,14 +42,16 @@ class Order extends Component {
     }, 0);
     return (
       <div>
-        <h2>Here's your tix 🎟</h2>
+        <h2>Your tix: 🎟</h2>
         {Object.keys(order).map((key) => {
           return this.renderOrderItem(key);
         })}
         <div className="total">
           <p>
-            Total:
-            <span>{total}</span>
+            <strong>
+              Total:
+              <span>{priceConverter(total)}</span>
+            </strong>
           </p>
         </div>
       </div>
