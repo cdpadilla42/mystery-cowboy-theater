@@ -49,13 +49,12 @@ class AddMovieForm extends Component {
             ref={this.imageRef}
             placeholder="image"
           />
-          <input
-            type="text"
+          <textarea
             name="description"
             ref={this.descriptionRef}
             placeholder="description"
             id="desc"
-          />
+          ></textarea>
           <button id="dlt_btn" type="submit">
             Add Movie
           </button>
