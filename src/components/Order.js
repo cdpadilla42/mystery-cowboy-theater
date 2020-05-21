@@ -47,12 +47,12 @@ class Order extends Component {
           return this.renderOrderItem(key);
         })}
         <div className="total">
-          <p>
-            <strong>
+          <strong>
+            <div>
               Total:
-              <span>{priceConverter(total)}</span>
-            </strong>
-          </p>
+              <span id="total_number">{priceConverter(total)}</span>
+            </div>
+          </strong>
         </div>
       </div>
     );

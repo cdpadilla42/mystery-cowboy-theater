@@ -70,3 +70,14 @@
   background: none;
   border: none;
 }
+
+.total {
+  border-top: solid 1px black;
+}
+.total:first-child {
+  display: inline-block;
+}
+
+#total_number {
+  float: right;
+}
