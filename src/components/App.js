@@ -12,8 +12,6 @@ class App extends React.Component {
     order: {},
   };
 
-  // TODO: Make it pretty! Let's get this done this week
-
   componentDidMount() {
     const params = this.props.match.params.theaterId;
     const orderLocalStorage = JSON.parse(localStorage.getItem(`${params}`));
