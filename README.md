@@ -12,6 +12,7 @@ Tech used:
 - Firebase
 - Re-Base
 - Bootstrap
+- Custom CSS
 - Deployed to Netlify
 
 My aim with this project was to refamiliarize myself with React and elevate my use of the framework. Since my last React app, I planned to add complexity with multiple components needing the same state data, making the project more modular, and hooking the app up with a database. Challenge with this complexity came when the order component loaded user ticket data immediately from local storage, but crashed the application when looking for movie information. Movie data was being loaded from firebase and, thus, was not readily available. A quick addition of returning null in the event of no movie data solved the issue.
