@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-size: 16px;
   margin: 0;
@@ -80,8 +84,7 @@ nav .nav__hamburger {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 600px;
-  border: 1px solid green;
+  height: 300px;
   position: relative;
 }
 .movies__styled_background {
@@ -92,7 +95,7 @@ nav .nav__hamburger {
 }
 .movies__list {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   position: absolute;
   left: 0;
   top: calc(50% - 125px);
@@ -100,6 +103,10 @@ nav .nav__hamburger {
   padding: 0;
   margin: 0 auto;
   width: 100%;
+  overflow: scroll;
+}
+.movies__list::-webkit-scrollbar {
+  display: none;
 }
 .movies__list img {
   width: 162px;

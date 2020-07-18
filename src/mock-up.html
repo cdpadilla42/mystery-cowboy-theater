@@ -38,13 +38,20 @@
       </div>
     </main>
     <script>
-      const hamburgerEl = document.querySelector('.nav__hamburger');
+      function mobileNav() {
+        const hamburgerEl = document.querySelector('.nav__hamburger');
+        if (!hamburgerEl) return;
 
-      function toggleMobileNav() {
-        console.log('opening mobile nav');
+        function toggleMobileNav() {
+          console.log('opening mobile nav');
+        }
+
+        hamburgerEl.addEventListener('click', toggleMobileNav);
       }
 
-      hamburgerEl.addEventListener('click', toggleMobileNav);
+      function movieSlider() {}
+
+      mobileNav();
     </script>
   </body>
 </html>
