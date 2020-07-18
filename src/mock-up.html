@@ -24,5 +24,27 @@
         </div>
       </div>
     </nav>
+    <main>
+      <div class="movies">
+        <div class="movies__styled_background"></div>
+        <ul class="movies__list">
+          <li><img src="" alt="" /></li>
+          <li><img src="" alt="" /></li>
+          <li><img src="" alt="" /></li>
+          <li><img src="" alt="" /></li>
+          <li><img src="" alt="" /></li>
+          <li><img src="" alt="" /></li>
+        </ul>
+      </div>
+    </main>
+    <script>
+      const hamburgerEl = document.querySelector('.nav__hamburger');
+
+      function toggleMobileNav() {
+        console.log('opening mobile nav');
+      }
+
+      hamburgerEl.addEventListener('click', toggleMobileNav);
+    </script>
   </body>
 </html>
