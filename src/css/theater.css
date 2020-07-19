@@ -10,7 +10,6 @@ body {
 }
 
 nav {
-  background-color: green;
   background-color: #000000;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='30' viewBox='0 0 1000 120'%3E%3Cg fill='none' stroke='%23222' stroke-width='10' %3E%3Cpath d='M-500 75c0 0 125-30 250-30S0 75 0 75s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 45c0 0 125-30 250-30S0 45 0 45s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 105c0 0 125-30 250-30S0 105 0 105s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 15c0 0 125-30 250-30S0 15 0 15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500-15c0 0 125-30 250-30S0-15 0-15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 135c0 0 125-30 250-30S0 135 0 135s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3C/g%3E%3C/svg%3E");
   height: 70px;
@@ -112,6 +111,60 @@ nav .nav__hamburger {
   width: 162px;
   height: 250px;
   margin: 0 1rem;
+}
+
+.selected_movie {
+  display: flex;
+  padding: 1rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+}
+.selected_movie > * {
+  flex: 1;
+}
+.selected_movie__details {
+  display: flex;
+  justify-content: center;
+}
+.selected_movie__details_wrap {
+  font-size: 1rem;
+}
+.selected_movie__details_wrap h4, .selected_movie__details_wrap h3 {
+  display: inline-block;
+  padding: 0.1rem 0.5rem;
+  background-color: black;
+  color: white;
+}
+.selected_movie__details_wrap h3 {
+  font-size: 3rem;
+  margin-top: 0;
+}
+.selected_movie__details_wrap h4 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+.selected_movie__details_wrap p {
+  font-family: "Nunito", sans-serif;
+}
+.selected_movie__details_wrap button {
+  background-color: #eec642;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  color: black;
+  font-size: 1.5rem;
+  font-weight: 700;
+  transition: color 0.4s ease, background-color 0.4s ease;
+  margin-top: 2rem;
+}
+.selected_movie__details_wrap button:hover {
+  background-color: black;
+  color: #eec642;
+}
+.selected_movie__image {
+  display: flex;
+  justify-content: center;
 }
 
 /*# sourceMappingURL=theater.css.map */

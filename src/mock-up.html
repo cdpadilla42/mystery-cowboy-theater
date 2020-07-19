@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <title>Mystery Cowboy Theater</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./css/theater.css" />
     <script
       src="https://kit.fontawesome.com/940fb5f598.js"
@@ -27,6 +31,7 @@
     <main>
       <div class="movies">
         <div class="movies__styled_background"></div>
+        <!-- Create wrap for movie list -->
         <ul class="movies__list">
           <li><img src="../public/imgs/cavedwellers.jpg" alt="" /></li>
           <li><img src="../public/imgs/eegah.jpg" alt="" /></li>
@@ -41,13 +46,19 @@
           <img src="../public/imgs/podpeople.jpg" alt="" />
         </div>
         <div class="selected_movie__details">
-          <h3>Pod People</h3>
-          <p>A movie about FREAKS!</p>
-          <p>Ticket Price:</p>
-          <p>Date</p>
-          <button class="selected_movie__add_ticket">
-            Purchase Ticket
-          </button>
+          <div class="selected_movie__details_wrap">
+            <h3>Pod People</h3>
+            <div class="clear"></div>
+            <h4>About</h4>
+            <p>A movie about FREAKS!</p>
+            <h4>Ticket Price</h4>
+            <p>Ticket Price:</p>
+            <h4>Showing</h4>
+            <p>Date</p>
+            <button class="selected_movie__add_ticket">
+              Purchase Ticket
+            </button>
+          </div>
         </div>
       </div>
     </main>
