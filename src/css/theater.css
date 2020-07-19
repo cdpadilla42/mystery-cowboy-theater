@@ -114,6 +114,9 @@ nav .nav__hamburger {
   height: 250px;
   margin: 0 1rem;
 }
+.movies__list img:hover {
+  border: 3px solid #eec642;
+}
 
 .selected_movie {
   display: flex;

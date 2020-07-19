@@ -137,6 +137,11 @@ nav {
       width: 162px;
       height: 250px;
       margin: 0 1rem;
+
+      &:hover {
+        // transform: scale(1.1);
+        border: 3px solid $yellow;
+      }
     }
   }
 }
