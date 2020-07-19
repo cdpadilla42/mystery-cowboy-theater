@@ -122,7 +122,7 @@ nav {
     justify-content: flex-start;
     // top: calc(50% - 125px);
     list-style: none;
-    padding: 0;
+    padding: 0.5rem 0;
     margin: 0 auto;
     width: 100%;
     max-width: 1200px;
@@ -137,9 +137,12 @@ nav {
       width: 162px;
       height: 250px;
       margin: 0 1rem;
+      border: 0px solid $yellow;
+      transition: transform 0.4s ease;
 
       &:hover {
-        // transform: scale(1.1);
+        transform: scale(1.05);
+        // box-sizing: content-box;
         border: 3px solid $yellow;
       }
     }

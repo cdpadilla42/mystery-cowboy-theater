@@ -99,7 +99,7 @@ nav .nav__hamburger {
   display: flex;
   justify-content: flex-start;
   list-style: none;
-  padding: 0;
+  padding: 0.5rem 0;
   margin: 0 auto;
   width: 100%;
   max-width: 1200px;
@@ -113,8 +113,11 @@ nav .nav__hamburger {
   width: 162px;
   height: 250px;
   margin: 0 1rem;
+  border: 0px solid #eec642;
+  transition: transform 0.4s ease;
 }
 .movies__list img:hover {
+  transform: scale(1.05);
   border: 3px solid #eec642;
 }
 
