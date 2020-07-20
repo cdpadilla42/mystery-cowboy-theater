@@ -28,6 +28,11 @@
         </div>
       </div>
     </nav>
+    <div class="mobile_nav">
+      <button class="mobile_nav__close">&times;</button>
+      <a class="mobile_nav__item" href="/">Edit Movies</a>
+      <a class="mobile_nav__item" href="/">Pick Location</a>
+    </div>
     <main>
       <div class="movies">
         <div class="movies__styled_background"></div>
@@ -64,16 +69,17 @@
     <script>
       function mobileNav() {
         const hamburgerEl = document.querySelector('.nav__hamburger');
+        const mobileNavEl = document.querySelector('.mobile_nav');
+        const mobileNavCloseEl = document.querySelector('.mobile_nav__close');
         if (!hamburgerEl) return;
 
         function toggleMobileNav() {
-          console.log('opening mobile nav');
+          mobileNavEl.classList.toggle('open');
         }
 
         hamburgerEl.addEventListener('click', toggleMobileNav);
+        mobileNavCloseEl.addEventListener('click', toggleMobileNav);
       }
-
-      function movieSlider() {}
 
       mobileNav();
     </script>
