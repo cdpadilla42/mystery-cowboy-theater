@@ -227,14 +227,17 @@ nav .nav__hamburger {
 }
 
 .cart {
-  max-width: 600px;
-  margin: 0 auto;
+  margin: 3rem auto;
 }
 .cart__display_items {
-  margin: 0 1rem;
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 4rem;
 }
 .cart__item {
   display: flex;
+  margin: 0 auto;
+  position: relative;
 }
 .cart__item_image {
   background-image: url("../../public/imgs/cavedwellers.jpg");
@@ -243,7 +246,24 @@ nav .nav__hamburger {
   background-position: center;
 }
 .cart__item_details {
-  padding-left: 2rem;
+  padding-left: 4rem;
+}
+.cart__remove_item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: grey;
+  background-color: lightgrey;
+  position: absolute;
+  font-size: 1.3rem;
+  right: 1rem;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+}
+.cart__pricing_display {
+  max-width: 600px;
+  margin: 0 auto;
 }
 .cart__items, .cart__shipping, .cart__subtotal {
   width: 100%;
@@ -268,6 +288,7 @@ nav .nav__hamburger {
   border: none;
   flex-basis: 1rem;
   flex: 1;
+  background: none;
 }
 .quantity_editor__quantity {
   flex: 1;
