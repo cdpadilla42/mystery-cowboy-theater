@@ -34,7 +34,7 @@
       <a class="mobile_nav__item" href="/">Pick Location</a>
     </div>
     <main>
-      <div class="movies">
+      <section class="movies">
         <div class="movies__styled_background"></div>
         <ul class="movies__list">
           <li>
@@ -52,8 +52,8 @@
             <img src="../public/imgs/podpeople.jpg" alt="" tabindex="0" />
           </li>
         </ul>
-      </div>
-      <div class="selected_movie">
+      </section>
+      <section class="selected_movie">
         <div class="selected_movie__image">
           <img src="../public/imgs/podpeople.jpg" alt="" />
         </div>
@@ -72,7 +72,21 @@
             </button>
           </div>
         </div>
-      </div>
+      </section>
+      <section class="cart">
+        <div class="cart__items">
+          <span class="cart__items_quantity">1 item</span
+          ><span class="cart__items_price">$12.49</span>
+        </div>
+        <div class="cart__shipping">
+          <span class="cart__fee">Online Fee</span
+          ><span class="cart__fee_price">$3.00</span>
+        </div>
+        <div class="cart__subtotal">
+          <span class="cart__subtotal">Subtotal</span
+          ><span class="cart__subtotal_price">$16.24</span>
+        </div>
+      </section>
     </main>
     <script>
       function mobileNav() {

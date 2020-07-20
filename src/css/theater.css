@@ -161,6 +161,7 @@ nav .nav__hamburger {
   margin: 0 1rem;
   border: 0px solid #eec642;
   transition: transform 0.4s ease;
+  cursor: pointer;
 }
 .movies__list img:hover {
   transform: scale(1.05);
@@ -219,6 +220,23 @@ nav .nav__hamburger {
 .selected_movie__image {
   display: flex;
   justify-content: center;
+}
+
+.cart {
+  max-width: 600px;
+  margin: 0 auto;
+}
+.cart__items, .cart__shipping, .cart__subtotal {
+  width: 100%;
+  margin: 1rem 0;
+  color: grey;
+  text-transform: uppercase;
+}
+.cart__items span:last-child, .cart__shipping span:last-child, .cart__subtotal span:last-child {
+  float: right;
+}
+.cart__subtotal {
+  color: black;
 }
 
 /*# sourceMappingURL=theater.css.map */
