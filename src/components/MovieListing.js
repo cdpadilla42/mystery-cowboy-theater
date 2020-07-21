@@ -17,21 +17,31 @@ class MovieListing extends Component {
   render() {
     const movies = this.props.movies;
     return (
-      <div className="movie_listing">
-        <h2 className="theater__name">Mystery Cowboy Theater!</h2>
-        {Object.keys(movies).map((movieKey) => {
-          return (
-            <Movie
-              movie={movies[movieKey]}
-              key={movieKey}
-              index={movieKey}
-              addToOrder={this.props.addToOrder}
-            />
-          );
-        })}
-      </div>
+      <section class="movies">
+        <div class="movies__styled_background"></div>
+        <ul class="movies__list">
+          {Object.keys(movies).map((movieKey) => {
+            return (
+              <li>
+                <img src={movies[movieKey].image} alt="" srcset="" />
+              </li>
+            );
+          })}
+        </ul>
+      </section>
     );
   }
+}
+
+// Below is the code that should be moved to the full movie display
+
+{
+  /* <Movie
+                  movie={movies[movieKey]}
+                  key={movieKey}
+                  index={movieKey}
+                  addToOrder={this.props.addToOrder}
+                /> */
 }
 
 export default MovieListing;

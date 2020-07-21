@@ -117,13 +117,14 @@ class App extends React.Component {
           openMobileNav={this.openMobileNav}
           closeMobileNav={this.closeMobileNav}
           mobileNavOpen={this.state.mobileNavOpen}
+          storeId={this.props.match.params.theaterId}
         />
-        <div className="left_pane">
+        <main>
           <MovieListing
             movies={this.state.movies}
             addToOrder={this.addToOrder}
           />
-        </div>
+        </main>
         <div className="mid_pane">
           <Order
             movies={this.state.movies}

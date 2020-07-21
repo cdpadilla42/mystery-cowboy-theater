@@ -6,6 +6,7 @@ class Nav extends Component {
     openMobileNav: PropTypes.func,
     mobileNavOpen: PropTypes.bool,
     closeMobileNav: PropTypes.func,
+    storeId: PropTypes.string,
   };
 
   render() {
@@ -17,7 +18,7 @@ class Nav extends Component {
               Myster Cowboy Theater
             </a>
             <a href="/" className="nav__location">
-              The Domain
+              {this.props.storeId}
             </a>
             <ul className="nav__menu">
               <li>
