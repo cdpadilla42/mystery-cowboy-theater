@@ -12,6 +12,7 @@ class MovieListing extends Component {
       showtimes: PropTypes.object,
     }),
     addToOrder: PropTypes.func,
+    selectMovie: PropTypes.func,
   };
 
   render() {
@@ -23,7 +24,13 @@ class MovieListing extends Component {
           {Object.keys(movies).map((movieKey) => {
             return (
               <li>
-                <img src={movies[movieKey].image} alt="" srcset="" />
+                <img
+                  src={movies[movieKey].image}
+                  key={movieKey}
+                  onClick={() => this.props.selectMovie(movieKey)}
+                  alt=""
+                  srcset=""
+                />
               </li>
             );
           })}

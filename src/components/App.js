@@ -3,6 +3,7 @@ import '../css/theater.css';
 import Nav from './Nav';
 import MovieListing from './MovieListing';
 import Order from './Order';
+import MovieDisplay from './MovieDisplay';
 import UpdateMovies from './UpdateMovies';
 import sampleMovies from '../sample-movies';
 import base from '../base';
@@ -12,6 +13,7 @@ class App extends React.Component {
     movies: {},
     order: {},
     mobileNavOpen: false,
+    selectedMovie: null,
   };
 
   componentDidMount() {
@@ -96,6 +98,14 @@ class App extends React.Component {
     });
   };
 
+  selectMovie = (key) => {
+    console.log(key);
+    const selectedMovie = key;
+    this.setState({
+      selectedMovie,
+    });
+  };
+
   openMobileNav = () => {
     const mobileNavOpen = true;
     this.setState({
@@ -123,7 +133,9 @@ class App extends React.Component {
           <MovieListing
             movies={this.state.movies}
             addToOrder={this.addToOrder}
+            selectMovie={this.selectMovie}
           />
+          <MovieDisplay />
         </main>
         <div className="mid_pane">
           <Order
