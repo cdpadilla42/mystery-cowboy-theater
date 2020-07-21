@@ -1,5 +1,6 @@
 import React from 'react';
-import '../css/App.css';
+import '../css/theater.css';
+import Nav from './Nav';
 import MovieListing from './MovieListing';
 import Order from './Order';
 import UpdateMovies from './UpdateMovies';
@@ -10,6 +11,7 @@ class App extends React.Component {
   state = {
     movies: {},
     order: {},
+    mobileNavOpen: false,
   };
 
   componentDidMount() {
@@ -94,9 +96,28 @@ class App extends React.Component {
     });
   };
 
+  openMobileNav = () => {
+    const mobileNavOpen = true;
+    this.setState({
+      mobileNavOpen,
+    });
+  };
+
+  closeMobileNav = () => {
+    const mobileNavOpen = false;
+    this.setState({
+      mobileNavOpen,
+    });
+  };
+
   render() {
     return (
       <div className="theater_app">
+        <Nav
+          openMobileNav={this.openMobileNav}
+          closeMobileNav={this.closeMobileNav}
+          mobileNavOpen={this.state.mobileNavOpen}
+        />
         <div className="left_pane">
           <MovieListing
             movies={this.state.movies}
