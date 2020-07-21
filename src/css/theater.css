@@ -233,6 +233,7 @@ nav .nav__hamburger {
   max-width: 800px;
   margin: 3rem auto;
   padding: 4rem;
+  margin-bottom: 0;
 }
 .cart__item {
   display: flex;
@@ -261,9 +262,13 @@ nav .nav__hamburger {
   height: 25px;
   border-radius: 50%;
 }
+.cart hr {
+  width: 80%;
+  max-width: 800px;
+}
 .cart__pricing_display {
   max-width: 600px;
-  margin: 0 auto;
+  margin: 3rem auto;
 }
 .cart__items, .cart__shipping, .cart__subtotal {
   width: 100%;
