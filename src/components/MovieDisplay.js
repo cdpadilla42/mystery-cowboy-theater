@@ -3,14 +3,17 @@ import propTypes from 'prop-types';
 
 class MovieDisplay extends Component {
   static propTypes = {
-    movie: propTypes.object,
+    movies: propTypes.object,
+    selectedMovie: propTypes.string,
   };
 
   render() {
+    if (!this.props.selectedMovie) return '';
+
     return (
       <section class="selected_movie">
         <div class="selected_movie__image">
-          <img src="../public/imgs/podpeople.jpg" alt="" />
+          <img src={this.props.movies[this.props.selectedMovie].image} alt="" />
         </div>
         <div class="selected_movie__details">
           <div class="selected_movie__details_wrap">

@@ -135,7 +135,10 @@ class App extends React.Component {
             addToOrder={this.addToOrder}
             selectMovie={this.selectMovie}
           />
-          <MovieDisplay />
+          <MovieDisplay
+            selectedMovie={this.state.selectedMovie}
+            movies={this.state.movies}
+          />
         </main>
         <div className="mid_pane">
           <Order
