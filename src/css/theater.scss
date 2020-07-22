@@ -292,15 +292,19 @@ nav {
     width: 100vw;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.8);
-    // opacity: 0.8;
     z-index: 6;
-    pointer-events: none;
+
+    &.hide {
+      display: none;
+      pointer-events: none;
+    }
   }
 
   &__inner {
     height: 100%;
     background-color: #fff;
-    margin: 1rem;
+    margin: 3rem;
+    padding: 1rem;
     overflow: scroll;
     pointer-events: auto;
   }

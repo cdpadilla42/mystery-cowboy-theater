@@ -73,7 +73,7 @@
           </div>
         </div>
       </section>
-      <div class="modal__outside">
+      <div class="modal__outside hide">
         <div class="modal__inner">
           <section class="cart">
             <div class="cart__display_items">
@@ -150,6 +150,8 @@
       </div>
     </main>
     <script>
+      const modalEl = document.querySelector('.modal__outside');
+
       function mobileNav() {
         const hamburgerEl = document.querySelector('.nav__hamburger');
         const mobileNavEl = document.querySelector('.mobile_nav');
@@ -165,6 +167,21 @@
       }
 
       mobileNav();
+
+      function modal(modalEl) {
+        if (!modalEl) return;
+
+        function handleClick(e) {
+          console.log(e.target, e.currentTarget);
+          if (e.currentTarget === e.target) {
+            modalEl.classList.add('hide');
+          }
+        }
+
+        modalEl.addEventListener('click', handleClick);
+      }
+
+      modal(modalEl);
     </script>
   </body>
 </html>
