@@ -5,6 +5,7 @@ class MovieDisplay extends Component {
   static propTypes = {
     movies: propTypes.object,
     selectedMovie: propTypes.string,
+    addToOrder: propTypes.func,
   };
 
   render() {
@@ -32,7 +33,12 @@ class MovieDisplay extends Component {
             <p>Ticket Price:</p>
             <h4>Showing</h4>
             <p>Date</p>
-            <button class="selected_movie__add_ticket">Purchase Ticket</button>
+            <button
+              onClick={() => this.props.addToOrder(this.props.selectedMovie)}
+              class="selected_movie__add_ticket"
+            >
+              Purchase Ticket
+            </button>
           </div>
         </div>
       </section>

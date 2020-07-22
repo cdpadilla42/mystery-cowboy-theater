@@ -132,11 +132,11 @@ class App extends React.Component {
         <main>
           <MovieListing
             movies={this.state.movies}
-            addToOrder={this.addToOrder}
             selectMovie={this.selectMovie}
           />
           <MovieDisplay
             selectedMovie={this.state.selectedMovie}
+            addToOrder={this.addToOrder}
             movies={this.state.movies}
           />
         </main>
