@@ -40,6 +40,7 @@ class Order extends Component {
       // add to prev total
       return prevTotal + movieTotal;
     }, 0);
+
     return (
       <div>
         <h2>Your tix: 🎟</h2>

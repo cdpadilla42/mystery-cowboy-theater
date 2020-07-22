@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import TheaterPicker from './TheaterPicker';
 import App from './App';
+import Order from './Order';
 import NotFound from './NotFound';
 
 const Router = () => {

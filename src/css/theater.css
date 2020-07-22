@@ -237,6 +237,24 @@ nav .nav__hamburger {
   width: 334px;
 }
 
+.modal__outside {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 6;
+  pointer-events: none;
+}
+.modal__inner {
+  height: 100%;
+  background-color: #fff;
+  margin: 1rem;
+  overflow: scroll;
+  pointer-events: auto;
+}
+
 .cart {
   margin: 3rem auto;
 }
@@ -252,9 +270,11 @@ nav .nav__hamburger {
   position: relative;
 }
 .cart__item_image {
-  width: 200px;
-  height: 200px;
+  background-image: url("../../public/imgs/cavedwellers.jpg");
+  width: 100px;
+  height: 100px;
   background-position: center;
+  background-size: cover;
 }
 .cart__item_details {
   padding-left: 4rem;
