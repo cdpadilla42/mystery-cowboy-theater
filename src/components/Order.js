@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { priceConverter } from '../helper';
+import CartItem from './CartItem';
 
 class Order extends Component {
   static propTypes = {
@@ -40,6 +41,14 @@ class Order extends Component {
       // add to prev total
       return prevTotal + movieTotal;
     }, 0);
+
+    return (
+      <div class="cart__display_items">
+        {Object.keys(order).map((key) => {
+          return <CartItem index={key} key={key} movies={movies} />;
+        })}
+      </div>
+    );
 
     return (
       <div>

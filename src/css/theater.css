@@ -274,7 +274,6 @@ nav .nav__hamburger {
   position: relative;
 }
 .cart__item_image {
-  background-image: url("../../public/imgs/cavedwellers.jpg");
   width: 100px;
   height: 100px;
   background-position: center;

@@ -13,6 +13,7 @@ class App extends React.Component {
     movies: {},
     order: {},
     mobileNavOpen: false,
+    cartModalOpen: false,
     selectedMovie: null,
   };
 
@@ -117,6 +118,20 @@ class App extends React.Component {
     const mobileNavOpen = false;
     this.setState({
       mobileNavOpen,
+    });
+  };
+
+  openModalNav = () => {
+    const cartModalOpen = true;
+    this.setState({
+      cartModalOpen,
+    });
+  };
+
+  closeModalNav = () => {
+    const cartModalOpen = false;
+    this.setState({
+      cartModalOpen,
     });
   };
 
