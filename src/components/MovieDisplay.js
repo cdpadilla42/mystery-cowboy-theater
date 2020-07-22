@@ -8,7 +8,14 @@ class MovieDisplay extends Component {
   };
 
   render() {
-    if (!this.props.selectedMovie) return '';
+    if (!this.props.selectedMovie)
+      return (
+        <img
+          src="/imgs/mst3klogo.png"
+          alt="MST3K logo"
+          class="selected_movie__placeholder"
+        />
+      );
 
     return (
       <section class="selected_movie">

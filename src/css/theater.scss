@@ -213,6 +213,12 @@ nav {
   max-width: 1000px;
   margin: 0 auto;
   position: relative;
+  height: 631px;
+
+  &__placeholder {
+    max-width: 100%;
+    margin: 7rem 0;
+  }
 
   & > * {
     flex: 1;
@@ -270,7 +276,11 @@ nav {
   &__image {
     display: flex;
     justify-content: center;
-    // padding: 0 1rem;
+    align-items: center;
+
+    & img {
+      width: 334px;
+    }
   }
 }
 
