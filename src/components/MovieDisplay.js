@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import propTypes from 'prop-types';
+import { formatTime, priceConverter } from '../helper';
 
 class MovieDisplay extends Component {
   static propTypes = {
@@ -9,6 +10,8 @@ class MovieDisplay extends Component {
   };
 
   render() {
+    const movie = this.props.movies[this.props.selectedMovie];
+
     if (!this.props.selectedMovie)
       return (
         <img
@@ -21,18 +24,18 @@ class MovieDisplay extends Component {
     return (
       <section class="selected_movie">
         <div class="selected_movie__image">
-          <img src={this.props.movies[this.props.selectedMovie].image} alt="" />
+          <img src={movie.image} alt="" />
         </div>
         <div class="selected_movie__details">
           <div class="selected_movie__details_wrap">
-            <h3>Pod People</h3>
+            <h3>{movie.name}</h3>
             <div class="clear"></div>
             <h4>About</h4>
-            <p>A movie about FREAKS!</p>
+            <p>{movie.desc}</p>
             <h4>Ticket Price</h4>
-            <p>Ticket Price:</p>
+            <p>Adult: {priceConverter(movie.price)}</p>
             <h4>Showing</h4>
-            <p>Date</p>
+            <p>Date: {formatTime(movie.date)}</p>
             <button
               onClick={() => this.props.addToOrder(this.props.selectedMovie)}
               class="selected_movie__add_ticket"

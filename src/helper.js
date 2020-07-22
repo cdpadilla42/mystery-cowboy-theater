@@ -1,5 +1,5 @@
 export function priceConverter(price) {
-  return `$${price / 100}`;
+  return `$${(price / 100).toFixed(2)}`;
 }
 
 export function rando(arr) {
