@@ -61,13 +61,6 @@ class App extends React.Component {
     this.closeModalNav();
   };
 
-  loadSampleMovies = () => {
-    const movies = { ...this.state.movies, ...sampleMovies };
-    this.setState({
-      movies,
-    });
-  };
-
   addToOrder = (key) => {
     const order = { ...this.state.order };
     order[key] ? (order[key] = order[key] + 1) : (order[key] = 1);
@@ -92,37 +85,6 @@ class App extends React.Component {
     delete order[key];
     this.setState({
       order,
-    });
-  };
-
-  addMovie = (movie) => {
-    const movieKey = `movie${Date.now()}`;
-    const movies = {
-      ...this.state.movies,
-      [movieKey]: movie,
-    };
-    this.setState({
-      movies,
-    });
-  };
-
-  updateMovie = (movie, movieKey) => {
-    const movies = {
-      ...this.state.movies,
-      [movieKey]: movie,
-    };
-    this.setState({
-      movies,
-    });
-  };
-
-  deleteMovie = (movieKey) => {
-    const movies = {
-      ...this.state.movies,
-      [movieKey]: null,
-    };
-    this.setState({
-      movies,
     });
   };
 
@@ -201,13 +163,13 @@ class App extends React.Component {
         </main>
         {this.state.cartModalOpen && this.renderModal()}
         <div className="right_pane">
-          <UpdateMovies
+          {/* <UpdateMovies
             movies={this.state.movies}
             addMovie={this.addMovie}
             updateMovie={this.updateMovie}
             loadSampleMovies={this.loadSampleMovies}
             deleteMovie={this.deleteMovie}
-          />
+          /> */}
         </div>
       </div>
     );
