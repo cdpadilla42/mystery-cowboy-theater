@@ -58,6 +58,15 @@ class App extends React.Component {
     });
   };
 
+  subtractTicketFromOrder = (key) => {
+    const order = { ...this.state.order };
+    if (order[key] === 1) return;
+    order[key] = order[key] - 1;
+    this.setState({
+      order,
+    });
+  };
+
   deleteFromOrder = (key) => {
     const order = {
       ...this.state.order,
@@ -160,6 +169,8 @@ class App extends React.Component {
             movies={this.state.movies}
             order={this.state.order}
             deleteFromOrder={this.deleteFromOrder}
+            subtractTicketFromOrder={this.subtractTicketFromOrder}
+            addToOrder={this.addToOrder}
           />
         </div>
         <div className="right_pane">

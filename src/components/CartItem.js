@@ -4,6 +4,8 @@ import propTypes from 'prop-types';
 class CartItem extends Component {
   static propTypes = {
     movies: propTypes.object,
+    subtractTicketFromOrder: propTypes.func,
+    order: propTypes.func,
   };
 
   render() {
@@ -29,9 +31,23 @@ class CartItem extends Component {
         <div class="cart__item_details">
           <p>Pod People</p>
           <div class="quantity_editor">
-            <button class="quantity_editor__minus">-</button>
-            <div class="quantity_editor__quantity">1</div>
-            <button class="quantity_editor__plus">+</button>
+            <button
+              class="quantity_editor__minus"
+              onClick={() =>
+                this.props.subtractTicketFromOrder(this.props.index)
+              }
+            >
+              -
+            </button>
+            <div class="quantity_editor__quantity">
+              {this.props.order[this.props.index]}
+            </div>
+            <button
+              class="quantity_editor__plus"
+              onClick={() => this.props.addToOrder(this.props.index)}
+            >
+              +
+            </button>
           </div>
           <p class="cart__item_price">$12.49</p>
         </div>

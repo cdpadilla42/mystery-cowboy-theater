@@ -8,6 +8,8 @@ class Order extends Component {
     order: PropTypes.object,
     movies: PropTypes.object,
     deleteFromOrder: PropTypes.func,
+    subtractTicketFromOrder: PropTypes.func,
+    addToOrder: PropTypes.func,
   };
 
   renderOrderItem = (key) => {
@@ -51,6 +53,9 @@ class Order extends Component {
               index={key}
               key={key}
               movies={movies}
+              subtractTicketFromOrder={this.props.subtractTicketFromOrder}
+              order={this.props.order}
+              addToOrder={this.props.addToOrder}
             />
           );
         })}
