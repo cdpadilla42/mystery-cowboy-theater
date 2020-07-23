@@ -7,6 +7,7 @@ class Nav extends Component {
     mobileNavOpen: PropTypes.bool,
     closeMobileNav: PropTypes.func,
     storeId: PropTypes.string,
+    openModalNav: PropTypes.func,
   };
 
   render() {
@@ -26,6 +27,9 @@ class Nav extends Component {
               </li>
               <li>
                 <a href="/">Pick Location</a>
+              </li>
+              <li>
+                <span onClick={this.props.openModalNav}>View Order</span>
               </li>
             </ul>
             <div className="nav__mobile_content">

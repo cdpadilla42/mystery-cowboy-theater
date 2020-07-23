@@ -31,6 +31,9 @@ class App extends React.Component {
       context: this,
       state: 'movies',
     });
+
+    // Add key functionality
+    document.addEventListener('keyup', this.handleKeyup);
   }
 
   componentDidUpdate() {
@@ -41,7 +44,22 @@ class App extends React.Component {
 
   componentWillUnmount() {
     base.removeBinding(this.ref);
+
+    // remove key listener
+    document.removeEventListener('keyup', this.handleKeyup);
   }
+
+  handleKeyup = (e) => {
+    if (e.key === 'Escape') {
+      this.closeModalNav();
+    }
+  };
+
+  handleClick = (e) => {
+    console.log(e.currentTarget, e.target);
+    if (e.currentTarget !== e.target) return;
+    this.closeModalNav();
+  };
 
   loadSampleMovies = () => {
     const movies = { ...this.state.movies, ...sampleMovies };
@@ -137,11 +155,27 @@ class App extends React.Component {
     });
   };
 
-  closeModalNav = () => {
+  closeModalNav = (e) => {
     const cartModalOpen = false;
     this.setState({
       cartModalOpen,
     });
+  };
+
+  renderModal = () => {
+    return (
+      <div class={'modal__outside'} onClick={this.handleClick}>
+        <div class="modal__inner">
+          <Order
+            movies={this.state.movies}
+            order={this.state.order}
+            deleteFromOrder={this.deleteFromOrder}
+            subtractTicketFromOrder={this.subtractTicketFromOrder}
+            addToOrder={this.addToOrder}
+          />
+        </div>
+      </div>
+    );
   };
 
   render() {
@@ -152,6 +186,7 @@ class App extends React.Component {
           closeMobileNav={this.closeMobileNav}
           mobileNavOpen={this.state.mobileNavOpen}
           storeId={this.props.match.params.theaterId}
+          openModalNav={this.openModalNav}
         />
         <main>
           <MovieListing
@@ -164,15 +199,7 @@ class App extends React.Component {
             movies={this.state.movies}
           />
         </main>
-        <div className="mid_pane">
-          <Order
-            movies={this.state.movies}
-            order={this.state.order}
-            deleteFromOrder={this.deleteFromOrder}
-            subtractTicketFromOrder={this.subtractTicketFromOrder}
-            addToOrder={this.addToOrder}
-          />
-        </div>
+        {this.state.cartModalOpen && this.renderModal()}
         <div className="right_pane">
           <UpdateMovies
             movies={this.state.movies}
