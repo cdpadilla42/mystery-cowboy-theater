@@ -20,7 +20,7 @@ class MovieListing extends Component {
     return (
       <section class="movies">
         <div class="movies__styled_background"></div>
-        <ul class="movies__list">
+        <ul class="movies__list" tabIndex="-1">
           {Object.keys(movies).map((movieKey) => {
             return (
               <li>
@@ -30,6 +30,7 @@ class MovieListing extends Component {
                   onClick={() => this.props.selectMovie(movieKey)}
                   alt=""
                   srcset=""
+                  tabIndex="0"
                 />
               </li>
             );

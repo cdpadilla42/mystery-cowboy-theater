@@ -68,7 +68,10 @@ class Nav extends Component {
           <button
             tabIndex="0"
             class="nav__link"
-            onClick={this.props.openModalNav}
+            onClick={() => {
+              this.props.openModalNav();
+              this.props.closeMobileNav();
+            }}
             className="mobile_nav__button"
           >
             View Order
