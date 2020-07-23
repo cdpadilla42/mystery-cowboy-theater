@@ -45,7 +45,14 @@ class Order extends Component {
     return (
       <div class="cart__display_items">
         {Object.keys(order).map((key) => {
-          return <CartItem index={key} key={key} movies={movies} />;
+          return (
+            <CartItem
+              deleteFromOrder={this.props.deleteFromOrder}
+              index={key}
+              key={key}
+              movies={movies}
+            />
+          );
         })}
       </div>
     );

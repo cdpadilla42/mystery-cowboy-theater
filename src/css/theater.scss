@@ -276,7 +276,7 @@ nav {
   &__image {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
 
     & img {
       width: 334px;
@@ -350,7 +350,7 @@ nav {
     right: 1rem;
     width: 25px;
     height: 25px;
-
+    cursor: pointer;
     border-radius: 50%;
   }
 
@@ -395,6 +395,7 @@ nav {
     flex-basis: 1rem;
     flex: 1;
     background: none;
+    border: 1px solid gray;
   }
 
   &__quantity {
@@ -403,5 +404,7 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
   }
 }

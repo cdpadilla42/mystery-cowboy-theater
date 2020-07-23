@@ -19,7 +19,12 @@ class CartItem extends Component {
 
     return (
       <div class="cart__item">
-        <div class="cart__remove_item">&times;</div>
+        <div
+          class="cart__remove_item"
+          onClick={() => this.props.deleteFromOrder(this.props.index)}
+        >
+          &times;
+        </div>
         <div class="cart__item_image" style={imageStlye}></div>
         <div class="cart__item_details">
           <p>Pod People</p>

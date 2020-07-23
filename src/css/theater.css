@@ -231,7 +231,7 @@ nav .nav__hamburger {
 .selected_movie__image {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 }
 .selected_movie__image img {
   width: 334px;
@@ -293,6 +293,7 @@ nav .nav__hamburger {
   right: 1rem;
   width: 25px;
   height: 25px;
+  cursor: pointer;
   border-radius: 50%;
 }
 .cart hr {
@@ -327,6 +328,7 @@ nav .nav__hamburger {
   flex-basis: 1rem;
   flex: 1;
   background: none;
+  border: 1px solid gray;
 }
 .quantity_editor__quantity {
   flex: 1;
@@ -334,6 +336,8 @@ nav .nav__hamburger {
   display: flex;
   justify-content: center;
   align-items: center;
+  border-top: 1px solid grey;
+  border-bottom: 1px solid grey;
 }
 
 /*# sourceMappingURL=theater.css.map */
