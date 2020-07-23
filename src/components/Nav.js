@@ -54,8 +54,8 @@ class Nav extends Component {
           }
         >
           <button
-            onClick={this.props.closeMobileNav}
             className="mobile_nav__close"
+            onClick={this.props.closeMobileNav}
           >
             &times;
           </button>
@@ -65,6 +65,14 @@ class Nav extends Component {
           <a className="mobile_nav__item" href="/">
             Pick Location
           </a>
+          <button
+            tabIndex="0"
+            class="nav__link"
+            onClick={this.props.openModalNav}
+            className="mobile_nav__button"
+          >
+            View Order
+          </button>
         </div>
       </>
     );
