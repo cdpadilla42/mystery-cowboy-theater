@@ -29,7 +29,13 @@ class Nav extends Component {
                 <a href="/">Pick Location</a>
               </li>
               <li>
-                <span onClick={this.props.openModalNav}>View Order</span>
+                <button
+                  tabIndex="0"
+                  class="nav__link"
+                  onClick={this.props.openModalNav}
+                >
+                  View Order
+                </button>
               </li>
             </ul>
             <div className="nav__mobile_content">

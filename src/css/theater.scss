@@ -27,14 +27,19 @@ nav {
   display: flex;
   align-items: center;
 
-  a {
+  %text_link {
     color: white;
     text-decoration: none;
 
     &:hover {
       color: $yellow;
       text-decoration: underline;
+      cursor: pointer;
     }
+  }
+
+  a {
+    @extend %text_link;
   }
 
   .nav {
@@ -57,6 +62,15 @@ nav {
       &:hover {
         color: $grey;
       }
+    }
+
+    &__link {
+      @extend %text_link;
+      font-size: inherit;
+      font-variant-caps: inherit;
+      font-weight: inherit;
+      border: none;
+      background-color: rgba(0, 0, 0, 0);
     }
 
     &__menu {
@@ -182,7 +196,7 @@ nav {
     padding: 0.5rem 0;
     margin: 0 auto;
     width: 100%;
-    max-width: 1200px;
+    // max-width: 1200px;
     overflow: scroll;
     z-index: 2;
 

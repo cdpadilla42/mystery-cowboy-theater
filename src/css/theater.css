@@ -21,13 +21,14 @@ nav {
   display: flex;
   align-items: center;
 }
-nav a {
+nav .nav__link, nav a {
   color: white;
   text-decoration: none;
 }
-nav a:hover {
+nav .nav__link:hover, nav a:hover {
   color: #eec642;
   text-decoration: underline;
+  cursor: pointer;
 }
 nav .nav__container {
   flex: 1;
@@ -45,6 +46,13 @@ nav .nav__location {
 }
 nav .nav__location:hover {
   color: #656565;
+}
+nav .nav__link {
+  font-size: inherit;
+  font-variant-caps: inherit;
+  font-weight: inherit;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
 }
 nav .nav__menu {
   flex: 1;
@@ -154,7 +162,6 @@ nav .nav__hamburger {
   padding: 0.5rem 0;
   margin: 0 auto;
   width: 100%;
-  max-width: 1200px;
   overflow: scroll;
   z-index: 2;
 }
