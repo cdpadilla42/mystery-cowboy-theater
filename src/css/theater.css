@@ -245,6 +245,7 @@ nav .nav__hamburger {
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.8);
   z-index: 6;
+  padding: 3rem;
 }
 .modal__outside.hide {
   display: none;
@@ -253,7 +254,6 @@ nav .nav__hamburger {
 .modal__inner {
   height: 100%;
   background-color: #fff;
-  margin: 3rem;
   padding: 1rem;
   overflow: scroll;
   pointer-events: auto;
@@ -265,8 +265,8 @@ nav .nav__hamburger {
 .cart__display_items {
   max-width: 800px;
   margin: 3rem auto;
-  padding: 4rem;
   margin-bottom: 0;
+  padding: 0 3rem;
 }
 .cart__item {
   display: flex;
