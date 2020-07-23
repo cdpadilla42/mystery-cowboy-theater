@@ -31,12 +31,42 @@ class Order extends Component {
     );
   };
 
+  renderTotalTicketQuantity = () => {
+    return Object.keys(this.props.order).reduce((p, c) => {
+      return p + this.props.order[c];
+    }, 0);
+  };
+
+  calculateTicketTotal = () => {
+    const movies = this.props.movies;
+    const order = this.props.order;
+    const keys = Object.keys(order);
+    const total = keys.reduce((prevTotal, key) => {
+      if (!movies[key]) return null;
+      // multiply number of tickets by price
+      const moviePrice = movies[key].price;
+      const movieTotal = order[key] * moviePrice;
+      // add to prev total
+      return prevTotal + movieTotal;
+    }, 0);
+
+    return total;
+  };
+
+  calculateOrderTotal = () => {
+    return this.calculateTicketTotal() + 300;
+  };
+
   renderTicketTotal = () => {
     return (
       <div className="cart__pricing_display">
         <div class="cart__items">
-          <span class="cart__items_quantity">1 tickets</span>
-          <span class="cart__items_price">$12.49</span>
+          <span class="cart__items_quantity">
+            tickets: {this.renderTotalTicketQuantity()}
+          </span>
+          <span class="cart__items_price">
+            {priceConverter(this.calculateTicketTotal())}
+          </span>
         </div>
         <div class="cart__shipping">
           <span class="cart__fee">Online Fee</span>
@@ -44,7 +74,9 @@ class Order extends Component {
         </div>
         <div class="cart__subtotal">
           <span class="cart__subtotal">Subtotal</span>
-          <span class="cart__subtotal_price">$16.24</span>
+          <span class="cart__subtotal_price">
+            {priceConverter(this.calculateOrderTotal())}
+          </span>
         </div>
       </div>
     );
