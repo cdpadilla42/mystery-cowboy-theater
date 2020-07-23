@@ -24,12 +24,13 @@ class CartItem extends Component {
         <div
           class="cart__remove_item"
           onClick={() => this.props.deleteFromOrder(this.props.index)}
+          tabIndex="0"
         >
           &times;
         </div>
         <div class="cart__item_image" style={imageStlye}></div>
         <div class="cart__item_details">
-          <p>Pod People</p>
+          <p>{movies[key].name}</p>
           <div class="quantity_editor">
             <button
               class="quantity_editor__minus"
