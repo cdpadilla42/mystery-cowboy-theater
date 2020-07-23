@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import propTypes from 'prop-types';
+import { priceConverter } from '../helper';
 
 class CartItem extends Component {
   static propTypes = {
@@ -13,7 +14,6 @@ class CartItem extends Component {
 
     const movies = this.props.movies;
     const key = this.props.index;
-    console.log();
 
     const imageStlye = {
       backgroundImage: `url(${movies[key].image})`,
@@ -33,23 +33,21 @@ class CartItem extends Component {
           <div class="quantity_editor">
             <button
               class="quantity_editor__minus"
-              onClick={() =>
-                this.props.subtractTicketFromOrder(this.props.index)
-              }
+              onClick={() => this.props.subtractTicketFromOrder(key)}
             >
               -
             </button>
-            <div class="quantity_editor__quantity">
-              {this.props.order[this.props.index]}
-            </div>
+            <div class="quantity_editor__quantity">{this.props.order[key]}</div>
             <button
               class="quantity_editor__plus"
-              onClick={() => this.props.addToOrder(this.props.index)}
+              onClick={() => this.props.addToOrder(key)}
             >
               +
             </button>
           </div>
-          <p class="cart__item_price">$12.49</p>
+          <p class="cart__item_price">
+            {priceConverter(movies[key].price * this.props.order[key])}
+          </p>
         </div>
       </div>
     );
