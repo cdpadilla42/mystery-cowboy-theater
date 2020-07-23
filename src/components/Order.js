@@ -31,6 +31,25 @@ class Order extends Component {
     );
   };
 
+  renderTicketTotal = () => {
+    return (
+      <div className="cart__pricing_display">
+        <div class="cart__items">
+          <span class="cart__items_quantity">1 tickets</span>
+          <span class="cart__items_price">$12.49</span>
+        </div>
+        <div class="cart__shipping">
+          <span class="cart__fee">Online Fee</span>
+          <span class="cart__fee_price">$3.00</span>
+        </div>
+        <div class="cart__subtotal">
+          <span class="cart__subtotal">Subtotal</span>
+          <span class="cart__subtotal_price">$16.24</span>
+        </div>
+      </div>
+    );
+  };
+
   render() {
     const movies = this.props.movies;
     const order = this.props.order;
@@ -45,21 +64,25 @@ class Order extends Component {
     }, 0);
 
     return (
-      <div class="cart__display_items">
-        {Object.keys(order).map((key) => {
-          return (
-            <CartItem
-              deleteFromOrder={this.props.deleteFromOrder}
-              index={key}
-              key={key}
-              movies={movies}
-              subtractTicketFromOrder={this.props.subtractTicketFromOrder}
-              order={this.props.order}
-              addToOrder={this.props.addToOrder}
-            />
-          );
-        })}
-      </div>
+      <section className="cart">
+        <div class="cart__display_items">
+          {Object.keys(order).map((key) => {
+            return (
+              <CartItem
+                deleteFromOrder={this.props.deleteFromOrder}
+                index={key}
+                key={key}
+                movies={movies}
+                subtractTicketFromOrder={this.props.subtractTicketFromOrder}
+                order={this.props.order}
+                addToOrder={this.props.addToOrder}
+              />
+            );
+          })}
+        </div>
+        <hr />
+        {this.renderTicketTotal()}
+      </section>
     );
 
     return (
