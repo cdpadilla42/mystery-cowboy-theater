@@ -83,7 +83,7 @@ class UpdateMovies extends Component {
 
   render() {
     return (
-      <div className="update_movies">
+      <div className="update_movies__container">
         {Object.keys(this.state.movies).map((movieKey) => {
           return (
             <EditMovieForm
@@ -95,6 +95,7 @@ class UpdateMovies extends Component {
             />
           );
         })}
+        {/* TODO: Put this into a modal */}
         <AddMovieForm addMovie={this.addMovie} />
         <button onClick={this.loadSampleMovies} className="btn btn-primary">
           Load Sample Movies
