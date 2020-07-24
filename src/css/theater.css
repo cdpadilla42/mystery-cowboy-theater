@@ -364,6 +364,11 @@ nav .nav__hamburger {
   background-size: cover;
 }
 
+@media all and (max-width: 760px) {
+  .edit_movie_form {
+    flex-direction: column;
+  }
+}
 .edit_movie_form {
   width: 100%;
   max-width: 960px;
@@ -374,9 +379,19 @@ nav .nav__hamburger {
 .edit_movie_form > * {
   flex: 1;
 }
+.edit_movie_form__image_preview {
+  display: flex;
+}
 .edit_movie_form__image_preview img {
   border: 3px solid #eec642;
   border-radius: 10px;
+}
+.edit_movie_form .edit_movie_form__form form button:focus, .edit_movie_form__form form .edit_movie_form button:focus, .edit_movie_form .edit_movie_form__form form input:focus, .edit_movie_form__form form .edit_movie_form input:focus,
+.edit_movie_form .edit_movie_form__form form textarea:focus,
+.edit_movie_form__form form .edit_movie_form textarea:focus {
+  outline: none;
+  border: 1px solid #eec642;
+  box-shadow: 0 0 5px #eec642;
 }
 .edit_movie_form__form {
   border: 1px solid grey;
@@ -398,12 +413,6 @@ nav .nav__hamburger {
   font-size: inherit;
   font-family: inherit;
 }
-.edit_movie_form__form form input:focus,
-.edit_movie_form__form form textarea:focus {
-  outline: none;
-  border: 1px solid #eec642;
-  box-shadow: 0 0 5px #eec642;
-}
 .edit_movie_form__form form textarea {
   resize: none;
   height: 128px;
@@ -415,9 +424,6 @@ nav .nav__hamburger {
   border: none;
   font-size: 1rem;
   margin: 0.5rem 0;
-}
-.edit_movie_form__form form button:focus {
-  outline: none;
 }
 .edit_movie_form__first_row_flex_wrap {
   display: flex;
