@@ -29,7 +29,7 @@ class EditMovieForm extends Component {
     return (
       <div className="edit_movie_form">
         <figure className="edit_movie_form__image_preview">
-          <img src="../public/imgs/cavedwellers.jpg" alt="" />
+          <img src={movie.image} alt="" />
         </figure>
         <section className="edit_movie_form__form">
           <form action="#">
@@ -63,7 +63,12 @@ class EditMovieForm extends Component {
               placeholder="Description"
               value={movie.desc}
             ></textarea>
-            <button>Delete Movie</button>
+            <button
+              id="dlt_btn"
+              onClick={() => this.props.deleteMovie(this.props.index)}
+            >
+              Delete Movie
+            </button>
           </form>
         </section>
       </div>
