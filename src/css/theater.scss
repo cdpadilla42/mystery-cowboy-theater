@@ -438,3 +438,58 @@ nav {
     border-bottom: 1px solid grey;
   }
 }
+
+.edit_movie_form {
+  width: 600px;
+
+  &__form {
+    border: 1px solid grey;
+    padding: 1rem;
+    border-radius: 15px;
+
+    form {
+      display: flex;
+      flex-direction: column;
+
+      input,
+      textarea {
+        border: 1px solid gray;
+        margin: 1rem 0;
+        padding: 1rem;
+        border-radius: 15px;
+        font-size: inherit;
+        font-family: inherit;
+
+        &:focus {
+          outline: none;
+          border: 1px solid green;
+        }
+      }
+
+      textarea {
+        resize: none;
+        height: 128px;
+      }
+    }
+  }
+
+  &__first_row_flex_wrap {
+    display: flex;
+    align-items: flex-end;
+    // justify-content: center;
+    width: 100%;
+    & > * {
+      // flex: 1;
+    }
+
+    #name {
+      margin-right: 1rem;
+      flex: 1;
+    }
+
+    #price {
+      margin-left: 1rem;
+      flex-basis: 200px;
+    }
+  }
+}

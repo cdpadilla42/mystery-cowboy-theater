@@ -356,4 +356,48 @@ nav .nav__hamburger {
   border-bottom: 1px solid grey;
 }
 
+.edit_movie_form {
+  width: 600px;
+}
+.edit_movie_form__form {
+  border: 1px solid grey;
+  padding: 1rem;
+  border-radius: 15px;
+}
+.edit_movie_form__form form {
+  display: flex;
+  flex-direction: column;
+}
+.edit_movie_form__form form input,
+.edit_movie_form__form form textarea {
+  border: 1px solid gray;
+  margin: 1rem 0;
+  padding: 1rem;
+  border-radius: 15px;
+  font-size: inherit;
+  font-family: inherit;
+}
+.edit_movie_form__form form input:focus,
+.edit_movie_form__form form textarea:focus {
+  outline: none;
+  border: 1px solid green;
+}
+.edit_movie_form__form form textarea {
+  resize: none;
+  height: 128px;
+}
+.edit_movie_form__first_row_flex_wrap {
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+}
+.edit_movie_form__first_row_flex_wrap #name {
+  margin-right: 1rem;
+  flex: 1;
+}
+.edit_movie_form__first_row_flex_wrap #price {
+  margin-left: 1rem;
+  flex-basis: 200px;
+}
+
 /*# sourceMappingURL=theater.css.map */
