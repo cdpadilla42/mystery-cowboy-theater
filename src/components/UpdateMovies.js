@@ -84,7 +84,6 @@ class UpdateMovies extends Component {
   render() {
     return (
       <div className="update_movies">
-        <h2 className="section_heading">Update movies</h2>
         {Object.keys(this.state.movies).map((movieKey) => {
           return (
             <EditMovieForm
