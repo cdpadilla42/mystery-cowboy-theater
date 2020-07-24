@@ -1,6 +1,23 @@
 $yellow: #eec642;
 $grey: #656565;
 
+%button {
+  background-color: $yellow;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  color: black;
+  font-size: 1.5rem;
+  font-weight: 700;
+  transition: color 0.4s ease, background-color 0.4s ease;
+  margin-top: 2rem;
+
+  &:hover {
+    background-color: black;
+    color: $yellow;
+  }
+}
+
 * {
   box-sizing: border-box;
 }
@@ -281,20 +298,7 @@ nav {
     }
 
     button {
-      background-color: $yellow;
-      border: none;
-      padding: 1rem 2rem;
-      border-radius: 5px;
-      color: black;
-      font-size: 1.5rem;
-      font-weight: 700;
-      transition: color 0.4s ease, background-color 0.4s ease;
-      margin-top: 2rem;
-
-      &:hover {
-        background-color: black;
-        color: $yellow;
-      }
+      @extend %button;
     }
   }
 
@@ -440,12 +444,21 @@ nav {
 }
 
 .edit_movie_form {
-  width: 600px;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+
+  & > * {
+    flex: 1;
+  }
 
   &__form {
     border: 1px solid grey;
-    padding: 1rem;
+    padding: 2rem;
     border-radius: 15px;
+    margin: 0 2rem;
 
     form {
       display: flex;
@@ -454,9 +467,9 @@ nav {
       input,
       textarea {
         border: 1px solid gray;
-        margin: 1rem 0;
-        padding: 1rem;
-        border-radius: 15px;
+        margin: 0.5rem 0;
+        padding: 0.5rem 0.75rem;
+        border-radius: 10px;
         font-size: inherit;
         font-family: inherit;
 
@@ -470,6 +483,16 @@ nav {
         resize: none;
         height: 128px;
       }
+
+      button {
+        @extend %button;
+        padding: 0;
+        height: 34px;
+        border-radius: 10px;
+        border: none;
+        font-size: 1rem;
+        margin: 0.5rem 0;
+      }
     }
   }
 
@@ -478,18 +501,22 @@ nav {
     align-items: flex-end;
     // justify-content: center;
     width: 100%;
+
+    input {
+      width: 0;
+    }
+
     & > * {
-      // flex: 1;
+      flex: 1 1 0;
     }
 
     #name {
-      margin-right: 1rem;
-      flex: 1;
+      margin-right: 0.5rem;
     }
 
     #price {
-      margin-left: 1rem;
-      flex-basis: 200px;
+      margin-left: 0.5rem;
+      // flex-basis: 100px;
     }
   }
 }

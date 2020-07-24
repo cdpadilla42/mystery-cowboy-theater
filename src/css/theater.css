@@ -1,3 +1,19 @@
+.edit_movie_form__form form button, .selected_movie__details_wrap button {
+  background-color: #eec642;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  color: black;
+  font-size: 1.5rem;
+  font-weight: 700;
+  transition: color 0.4s ease, background-color 0.4s ease;
+  margin-top: 2rem;
+}
+.edit_movie_form__form form button:hover, .selected_movie__details_wrap button:hover {
+  background-color: black;
+  color: #eec642;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -225,21 +241,6 @@ nav .nav__hamburger {
 .selected_movie__details_wrap p {
   font-family: "Nunito", sans-serif;
 }
-.selected_movie__details_wrap button {
-  background-color: #eec642;
-  border: none;
-  padding: 1rem 2rem;
-  border-radius: 5px;
-  color: black;
-  font-size: 1.5rem;
-  font-weight: 700;
-  transition: color 0.4s ease, background-color 0.4s ease;
-  margin-top: 2rem;
-}
-.selected_movie__details_wrap button:hover {
-  background-color: black;
-  color: #eec642;
-}
 .selected_movie__image {
   display: flex;
   justify-content: center;
@@ -357,12 +358,20 @@ nav .nav__hamburger {
 }
 
 .edit_movie_form {
-  width: 600px;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+.edit_movie_form > * {
+  flex: 1;
 }
 .edit_movie_form__form {
   border: 1px solid grey;
-  padding: 1rem;
+  padding: 2rem;
   border-radius: 15px;
+  margin: 0 2rem;
 }
 .edit_movie_form__form form {
   display: flex;
@@ -371,9 +380,9 @@ nav .nav__hamburger {
 .edit_movie_form__form form input,
 .edit_movie_form__form form textarea {
   border: 1px solid gray;
-  margin: 1rem 0;
-  padding: 1rem;
-  border-radius: 15px;
+  margin: 0.5rem 0;
+  padding: 0.5rem 0.75rem;
+  border-radius: 10px;
   font-size: inherit;
   font-family: inherit;
 }
@@ -386,18 +395,30 @@ nav .nav__hamburger {
   resize: none;
   height: 128px;
 }
+.edit_movie_form__form form button {
+  padding: 0;
+  height: 34px;
+  border-radius: 10px;
+  border: none;
+  font-size: 1rem;
+  margin: 0.5rem 0;
+}
 .edit_movie_form__first_row_flex_wrap {
   display: flex;
   align-items: flex-end;
   width: 100%;
 }
+.edit_movie_form__first_row_flex_wrap input {
+  width: 0;
+}
+.edit_movie_form__first_row_flex_wrap > * {
+  flex: 1 1 0;
+}
 .edit_movie_form__first_row_flex_wrap #name {
-  margin-right: 1rem;
-  flex: 1;
+  margin-right: 0.5rem;
 }
 .edit_movie_form__first_row_flex_wrap #price {
-  margin-left: 1rem;
-  flex-basis: 200px;
+  margin-left: 0.5rem;
 }
 
 /*# sourceMappingURL=theater.css.map */
