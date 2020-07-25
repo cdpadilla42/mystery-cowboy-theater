@@ -16,6 +16,8 @@ $grey: #656565;
   &:focus {
     background-color: black;
     color: $yellow;
+    outline: none;
+    box-shadow: 0 0 5px $yellow;
   }
 }
 
@@ -451,6 +453,15 @@ nav {
     background-attachment: fixed;
     background-size: cover;
   }
+
+  &__add_movie_button {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    @extend %button;
+    padding: 1rem;
+    height: auto;
+  }
 }
 
 @media all and (max-width: 760px) {
@@ -506,9 +517,9 @@ nav {
         font-size: inherit;
         font-family: inherit;
 
-        &:focus {
-          @extend %focus;
-        }
+        // &:focus {
+        //   @extend %focus;
+        // }
       }
 
       textarea {

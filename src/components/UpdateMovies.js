@@ -81,6 +81,13 @@ class UpdateMovies extends Component {
     });
   };
 
+  openModalNav = () => {
+    const cartModalOpen = true;
+    this.setState({
+      cartModalOpen,
+    });
+  };
+
   closeModalNav = (e) => {
     const cartModalOpen = false;
     this.setState({
@@ -108,6 +115,12 @@ class UpdateMovies extends Component {
   render() {
     return (
       <div className="update_movies__container">
+        <button
+          className="update_movies__add_movie_button"
+          onClick={this.openModalNav}
+        >
+          &#43;
+        </button>
         {Object.keys(this.state.movies).map((movieKey) => {
           return (
             <EditMovieForm
@@ -119,7 +132,6 @@ class UpdateMovies extends Component {
             />
           );
         })}
-        {/* TODO: Put this into a modal */}
         {this.state.cartModalOpen ? this.renderModal() : null}
         <button onClick={this.loadSampleMovies} className="btn btn-primary">
           Load Sample Movies

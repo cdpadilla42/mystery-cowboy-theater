@@ -1,4 +1,4 @@
-.edit_movie_form__form form button, .selected_movie__details_wrap button {
+.edit_movie_form__form form button, .update_movies__add_movie_button, .selected_movie__details_wrap button {
   background-color: #eec642;
   border: none;
   padding: 1rem 2rem;
@@ -9,9 +9,11 @@
   transition: color 0.4s ease, background-color 0.4s ease;
   margin-top: 2rem;
 }
-.edit_movie_form__form form button:hover, .selected_movie__details_wrap button:hover, .edit_movie_form__form form button:focus, .selected_movie__details_wrap button:focus {
+.edit_movie_form__form form button:hover, .update_movies__add_movie_button:hover, .selected_movie__details_wrap button:hover, .edit_movie_form__form form button:focus, .update_movies__add_movie_button:focus, .selected_movie__details_wrap button:focus {
   background-color: black;
   color: #eec642;
+  outline: none;
+  box-shadow: 0 0 5px #eec642;
 }
 
 * {
@@ -363,6 +365,13 @@ nav .nav__hamburger {
   background-attachment: fixed;
   background-size: cover;
 }
+.update_movies__add_movie_button {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  padding: 1rem;
+  height: auto;
+}
 
 @media all and (max-width: 760px) {
   .edit_movie_form {
@@ -387,9 +396,7 @@ nav .nav__hamburger {
   border-radius: 10px;
   max-width: 265px;
 }
-.edit_movie_form .edit_movie_form__form form button:focus, .edit_movie_form__form form .edit_movie_form button:focus, .edit_movie_form .edit_movie_form__form form input:focus, .edit_movie_form__form form .edit_movie_form input:focus,
-.edit_movie_form .edit_movie_form__form form textarea:focus,
-.edit_movie_form__form form .edit_movie_form textarea:focus {
+.edit_movie_form .edit_movie_form__form form button:focus, .edit_movie_form__form form .edit_movie_form button:focus {
   outline: none;
   border: 1px solid #eec642;
   box-shadow: 0 0 5px #eec642;
