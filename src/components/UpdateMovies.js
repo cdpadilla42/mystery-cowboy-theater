@@ -81,6 +81,30 @@ class UpdateMovies extends Component {
     });
   };
 
+  closeModalNav = (e) => {
+    const cartModalOpen = false;
+    this.setState({
+      cartModalOpen,
+    });
+    console.log(this.state);
+  };
+
+  handleClick = (e) => {
+    console.log(e.currentTarget, e.target);
+    if (e.currentTarget !== e.target) return;
+    this.closeModalNav();
+  };
+
+  renderModal = () => {
+    return (
+      <div class="modal__outside" onClick={this.handleClick}>
+        <div class="modal__inner">
+          <AddMovieForm addMovie={this.addMovie} />
+        </div>
+      </div>
+    );
+  };
+
   render() {
     return (
       <div className="update_movies__container">
@@ -96,7 +120,7 @@ class UpdateMovies extends Component {
           );
         })}
         {/* TODO: Put this into a modal */}
-        <AddMovieForm addMovie={this.addMovie} />
+        {this.state.cartModalOpen ? this.renderModal() : null}
         <button onClick={this.loadSampleMovies} className="btn btn-primary">
           Load Sample Movies
         </button>
