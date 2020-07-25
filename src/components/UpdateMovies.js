@@ -3,6 +3,7 @@ import '../css/theater.css';
 import sampleMovies from '../sample-movies';
 import EditMovieForm from './EditMovieForm';
 import AddMovieForm from './AddMovieForm';
+import Nav from './Nav';
 import base from '../base';
 
 class UpdateMovies extends Component {
@@ -115,29 +116,31 @@ class UpdateMovies extends Component {
 
   render() {
     return (
-      <div className="update_movies__container">
-        <button
-          className="update_movies__add_movie_button"
-          onClick={this.openModalNav}
-        >
-          &#43;
-        </button>
-        {Object.keys(this.state.movies).map((movieKey) => {
-          return (
-            <EditMovieForm
-              movie={this.state.movies[movieKey]}
-              updateMovie={this.updateMovie}
-              key={movieKey}
-              index={movieKey}
-              deleteMovie={this.deleteMovie}
-            />
-          );
-        })}
-        {this.state.cartModalOpen ? this.renderModal() : null}
-        <button className="add_sample_movies" onClick={this.loadSampleMovies}>
-          Load Sample Movies
-        </button>
-      </div>
+      <>
+        <div className="update_movies__container">
+          <button
+            className="update_movies__add_movie_button"
+            onClick={this.openModalNav}
+          >
+            &#43;
+          </button>
+          {Object.keys(this.state.movies).map((movieKey) => {
+            return (
+              <EditMovieForm
+                movie={this.state.movies[movieKey]}
+                updateMovie={this.updateMovie}
+                key={movieKey}
+                index={movieKey}
+                deleteMovie={this.deleteMovie}
+              />
+            );
+          })}
+          {this.state.cartModalOpen ? this.renderModal() : null}
+          <button className="add_sample_movies" onClick={this.loadSampleMovies}>
+            Load Sample Movies
+          </button>
+        </div>
+      </>
     );
   }
 }
