@@ -41,6 +41,7 @@ class EditMovieForm extends Component {
                 placeholder="Name"
                 className="resize-ta"
                 value={movie.name}
+                onChange={this.handleChange}
               ></input>
               <input
                 type="text"
@@ -48,6 +49,7 @@ class EditMovieForm extends Component {
                 id="price"
                 placeholder="Price"
                 value={movie.price}
+                onChange={this.handleChange}
               />
             </div>
             <input
@@ -56,13 +58,16 @@ class EditMovieForm extends Component {
               id="image"
               placeholder="Image"
               value={movie.image}
+              onChange={this.handleChange}
             />
             <textarea
               name="description"
               id="description"
               placeholder="Description"
-              value={movie.desc}
-            ></textarea>
+              onChange={this.handleChange}
+            >
+              {movie.desc}
+            </textarea>
             <button
               id="dlt_btn"
               onClick={() => this.props.deleteMovie(this.props.index)}
