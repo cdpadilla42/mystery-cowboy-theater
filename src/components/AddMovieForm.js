@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 class AddMovieForm extends Component {
   static propTypes = {
     addMovie: PropTypes.func,
+    closeModalNav: PropTypes.func,
   };
 
   nameRef = React.createRef();
@@ -16,13 +17,13 @@ class AddMovieForm extends Component {
     e.preventDefault();
     const movie = {
       name: this.nameRef.current.value,
-      description: this.descriptionRef.current.value,
+      desc: this.descriptionRef.current.value,
       price: parseInt(this.priceRef.current.value),
-      theater: this.theaterRef.current.value,
       image: this.imageRef.current.value,
     };
     console.log(movie);
     this.props.addMovie(movie);
+    this.props.closeModalNav();
   };
 
   render() {

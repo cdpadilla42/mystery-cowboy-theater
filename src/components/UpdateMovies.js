@@ -105,7 +105,10 @@ class UpdateMovies extends Component {
   renderModal = () => {
     return (
       <div class="modal__outside" onClick={this.handleClick}>
-        <AddMovieForm addMovie={this.addMovie} />
+        <AddMovieForm
+          addMovie={this.addMovie}
+          closeModalNav={this.closeModalNav}
+        />
       </div>
     );
   };
@@ -131,7 +134,7 @@ class UpdateMovies extends Component {
           );
         })}
         {this.state.cartModalOpen ? this.renderModal() : null}
-        <button onClick={this.loadSampleMovies} className="btn btn-primary">
+        <button className="add_sample_movies" onClick={this.loadSampleMovies}>
           Load Sample Movies
         </button>
       </div>
