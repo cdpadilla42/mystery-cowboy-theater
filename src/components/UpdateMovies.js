@@ -105,9 +105,7 @@ class UpdateMovies extends Component {
   renderModal = () => {
     return (
       <div class="modal__outside" onClick={this.handleClick}>
-        <div class="modal__inner">
-          <AddMovieForm addMovie={this.addMovie} />
-        </div>
+        <AddMovieForm addMovie={this.addMovie} />
       </div>
     );
   };

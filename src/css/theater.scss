@@ -328,6 +328,7 @@ nav {
     padding: 3rem;
     display: flex;
     justify-content: center;
+    align-items: center;
 
     &.hide {
       display: none;
@@ -504,6 +505,10 @@ nav {
     margin: 0 2rem;
     background-color: #fff;
 
+    h2 {
+      text-align: center;
+    }
+
     form {
       display: flex;
       flex-direction: column;
@@ -517,9 +522,9 @@ nav {
         font-size: inherit;
         font-family: inherit;
 
-        // &:focus {
-        //   @extend %focus;
-        // }
+        &:focus {
+          @extend %focus;
+        }
       }
 
       textarea {

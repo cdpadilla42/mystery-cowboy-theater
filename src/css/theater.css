@@ -263,6 +263,7 @@ nav .nav__hamburger {
   padding: 3rem;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 .modal__outside.hide {
   display: none;
@@ -396,7 +397,9 @@ nav .nav__hamburger {
   border-radius: 10px;
   max-width: 265px;
 }
-.edit_movie_form .edit_movie_form__form form button:focus, .edit_movie_form__form form .edit_movie_form button:focus {
+.edit_movie_form .edit_movie_form__form form button:focus, .edit_movie_form__form form .edit_movie_form button:focus, .edit_movie_form .edit_movie_form__form form input:focus, .edit_movie_form__form form .edit_movie_form input:focus,
+.edit_movie_form .edit_movie_form__form form textarea:focus,
+.edit_movie_form__form form .edit_movie_form textarea:focus {
   outline: none;
   border: 1px solid #eec642;
   box-shadow: 0 0 5px #eec642;
@@ -407,6 +410,9 @@ nav .nav__hamburger {
   border-radius: 15px;
   margin: 0 2rem;
   background-color: #fff;
+}
+.edit_movie_form__form h2 {
+  text-align: center;
 }
 .edit_movie_form__form form {
   display: flex;
