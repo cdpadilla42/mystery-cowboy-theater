@@ -252,6 +252,11 @@ nav .nav__hamburger {
   width: 334px;
 }
 
+@media all and (max-width: 760px) {
+  .selected_movie {
+    flex-direction: column;
+  }
+}
 .modal__outside {
   position: fixed;
   top: 0;

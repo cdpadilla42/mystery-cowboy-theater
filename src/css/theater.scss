@@ -316,6 +316,12 @@ nav {
   }
 }
 
+@media all and (max-width: 760px) {
+  .selected_movie {
+    flex-direction: column;
+  }
+}
+
 .modal {
   &__outside {
     position: fixed;
