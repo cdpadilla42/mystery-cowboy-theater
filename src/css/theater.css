@@ -209,8 +209,8 @@ nav .nav__hamburger {
   padding: 1rem;
   max-width: 1000px;
   margin: 0 auto;
+  padding-bottom: 2rem;
   position: relative;
-  height: 631px;
 }
 .selected_movie__placeholder {
   max-width: 100%;
