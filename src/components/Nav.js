@@ -47,15 +47,20 @@ class Nav extends Component {
       <>
         <nav>
           <div className="nav__container">
-            <a href="/" className="nav__logo">
+            <a href={`/theater/${this.props.storeId}`} className="nav__logo">
               Myster Cowboy Theater
             </a>
-            <a href="/" className="nav__location">
+            <a
+              href={`/theater/${this.props.storeId}`}
+              className="nav__location"
+            >
               {this.props.storeId}
             </a>
             <ul className="nav__menu">
               <li>
-                <a href="/">Edit Movies</a>
+                <a href={`/theater/${this.props.storeId}/update-movies`}>
+                  Edit Movies
+                </a>
               </li>
               <li>
                 <a href="/">Pick Location</a>
@@ -83,7 +88,10 @@ class Nav extends Component {
           >
             &times;
           </button>
-          <a className="mobile_nav__item" href="/">
+          <a
+            className="mobile_nav__item"
+            href={`/theater/${this.props.storeId}/update-movies`}
+          >
             Edit Movies
           </a>
           <a className="mobile_nav__item" href="/">
