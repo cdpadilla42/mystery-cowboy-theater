@@ -18,4 +18,4 @@ My aim with this project was to refamiliarize myself with React and elevate my u
 
 ## Demo Link
 
-[View app in browser](https://mystery-cowboy-theater.netlify.app/)
+[View app in browser](https://mystery-cowboy-theater.netlify.app/theater/The-Domain)
