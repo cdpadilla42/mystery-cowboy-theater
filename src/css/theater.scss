@@ -462,6 +462,16 @@ nav {
     padding-bottom: 2rem;
   }
 
+  &__heading {
+    display: flex;
+    height: 80px;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    color: white;
+    text-align: center;
+  }
+
   &__add_movie_button {
     position: fixed;
     bottom: 1rem;

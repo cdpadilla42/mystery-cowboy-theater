@@ -15,6 +15,7 @@ class App extends React.Component {
     mobileNavOpen: false,
     cartModalOpen: false,
     selectedMovie: null,
+    isAdminPage: false,
   };
 
   componentDidMount() {
@@ -124,9 +125,17 @@ class App extends React.Component {
     });
   };
 
+  calcTotalTickets = () => {
+    const quantity = Object.keys(this.state.order).reduce(
+      (prev, movie) => prev + this.state.order[movie],
+      0
+    );
+    return quantity;
+  };
+
   renderModal = () => {
     return (
-      <div class={'modal__outside'} onClick={this.handleClick}>
+      <div class="modal__outside" onClick={this.handleClick}>
         <div class="modal__inner">
           <Order
             movies={this.state.movies}
@@ -149,6 +158,8 @@ class App extends React.Component {
           mobileNavOpen={this.state.mobileNavOpen}
           storeId={this.props.match.params.theaterId}
           openModalNav={this.openModalNav}
+          isAdminPage={this.state.isAdminPage}
+          calcTotalTickets={this.calcTotalTickets}
         />
         <main>
           <MovieListing

@@ -372,6 +372,15 @@ nav .nav__hamburger {
   background-size: cover;
   padding-bottom: 2rem;
 }
+.update_movies__heading {
+  display: flex;
+  height: 80px;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  color: white;
+  text-align: center;
+}
 .update_movies__add_movie_button {
   position: fixed;
   bottom: 1rem;

@@ -13,6 +13,7 @@ class UpdateMovies extends Component {
     mobileNavOpen: false,
     cartModalOpen: false,
     selectedMovie: null,
+    isAdminPage: true,
   };
 
   componentDidMount() {
@@ -97,6 +98,20 @@ class UpdateMovies extends Component {
     console.log(this.state);
   };
 
+  openMobileNav = () => {
+    const mobileNavOpen = true;
+    this.setState({
+      mobileNavOpen,
+    });
+  };
+
+  closeMobileNav = () => {
+    const mobileNavOpen = false;
+    this.setState({
+      mobileNavOpen,
+    });
+  };
+
   handleClick = (e) => {
     console.log(e.currentTarget, e.target);
     if (e.currentTarget !== e.target) return;
@@ -117,6 +132,14 @@ class UpdateMovies extends Component {
   render() {
     return (
       <>
+        <Nav
+          openMobileNav={this.openMobileNav}
+          closeMobileNav={this.closeMobileNav}
+          mobileNavOpen={this.state.mobileNavOpen}
+          storeId={this.props.match.params.theaterId}
+          openModalNav={this.openModalNav}
+          isAdminPage={this.state.isAdminPage}
+        />
         <div className="update_movies__container">
           <button
             className="update_movies__add_movie_button"
@@ -124,6 +147,7 @@ class UpdateMovies extends Component {
           >
             &#43;
           </button>
+          <h1 className="update_movies__heading">Update Movies</h1>
           {Object.keys(this.state.movies).map((movieKey) => {
             return (
               <EditMovieForm

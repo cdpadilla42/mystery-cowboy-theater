@@ -8,6 +8,38 @@ class Nav extends Component {
     closeMobileNav: PropTypes.func,
     storeId: PropTypes.string,
     openModalNav: PropTypes.func,
+    isAdminPage: PropTypes.bool,
+    calcTotalTickets: PropTypes.func,
+  };
+
+  renderOrderButton = () => {
+    return (
+      <li>
+        <button
+          tabIndex="0"
+          class="nav__link"
+          onClick={this.props.openModalNav}
+        >
+          {`View Order (${this.props.calcTotalTickets()})`}
+        </button>
+      </li>
+    );
+  };
+
+  renderOrderButtonMobile = () => {
+    return (
+      <button
+        tabIndex="0"
+        class="nav__link"
+        onClick={() => {
+          this.props.openModalNav();
+          this.props.closeMobileNav();
+        }}
+        className="mobile_nav__button"
+      >
+        {`View Order (${this.props.calcTotalTickets()})`}
+      </button>
+    );
   };
 
   render() {
@@ -28,15 +60,7 @@ class Nav extends Component {
               <li>
                 <a href="/">Pick Location</a>
               </li>
-              <li>
-                <button
-                  tabIndex="0"
-                  class="nav__link"
-                  onClick={this.props.openModalNav}
-                >
-                  View Order
-                </button>
-              </li>
+              {this.props.isAdminPage ? null : this.renderOrderButton()}
             </ul>
             <div className="nav__mobile_content">
               <button
@@ -65,17 +89,7 @@ class Nav extends Component {
           <a className="mobile_nav__item" href="/">
             Pick Location
           </a>
-          <button
-            tabIndex="0"
-            class="nav__link"
-            onClick={() => {
-              this.props.openModalNav();
-              this.props.closeMobileNav();
-            }}
-            className="mobile_nav__button"
-          >
-            View Order
-          </button>
+          {this.props.isAdminPage ? null : this.renderOrderButtonMobile()}
         </div>
       </>
     );
