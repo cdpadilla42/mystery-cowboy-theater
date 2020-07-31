@@ -2,6 +2,8 @@
 
 ## React App for ordering tickets and performing CRUD
 
+**Note:** This project has been expanded to a Full Stack MERN application. [You can find the project here](https://github.com/cdpadilla42/mystery-cowboy-theater-fullstack)
+
 Mystery Cowboy Theater is a fictional single screen theater that loves showing exclusively [Mystery Science Theater 3000](https://en.wikipedia.org/wiki/Mystery_Science_Theater_3000) films and episodes! This application displays a movie selector, current ticket order, and a movie editor.
 
 This project in React fulfills all CRUD functionality in two areas: ticket orders and films being screened. The two larger states are contained in the app component and data is shared down to the other supporting components to allow instant updating app-wide. State is maintained through two means: local storage for ticket orders and firebase for movie showings.
@@ -18,4 +20,4 @@ My aim with this project was to refamiliarize myself with React and elevate my u
 
 ## Demo Link
 
-[View app in browser](https://mystery-cowboy-theater.netlify.app/theater/The-Domain)
+[View app in browser](https://mystery-cowboy-theater.netlify.app/theater/West-Campus)
